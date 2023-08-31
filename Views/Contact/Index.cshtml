@@ -1,0 +1,199 @@
+﻿﻿@model website.Models.sınıflar.contact_adres
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TasarmLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="utf-8">
+
+<body>
+
+    <!-- Page Header-->
+
+    <section class="breadcrumbs-custom">
+        <div class="breadcrumbs-custom-main context-dark">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-9">
+                        <h2 class="breadcrumbs-custom-title">İletişim</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumbs-custom-aside">
+            <div class="container">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/Anasayfa/Index">Ana Sayfa</a></li>
+                    <li class="active">İletişim</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    @foreach (var x in Model.adrss)
+    {
+        <section class="section section-md">
+            <div class="container">
+                <div class="row row-50">
+                    <div class="col-xl-5">
+                        <div class="inset-1">
+                            <h2>İletişim</h2>
+                            <p class="big">@x.aciklama</p>
+                            <div class="row row-50">
+                                <div class="col-sm-6 col-xl-12">
+                                    <p class="heading-7">@x.baslik</p>
+                                    <ul class="list list-style-1">
+                                        <li class="unit">
+
+                                            <span class="unit-left icon icon-sm text-accent mdi mdi-cellphone">
+
+                                            </span>
+                                            <div class="unit-body"><a href="tel:+905062425298">@x.phone</a></div>
+                                        </li>
+                                        <li class="unit">
+                                            <span class="unit-left icon icon-sm text-accent mdi mdi-cellphone">
+
+                                            </span>
+                                            <div class="unit-body"><a href="tel:+908508885298">@x.phone</a></div>
+                                        </li>
+                                        <li class="unit">
+                                            <span class="unit-left icon icon-sm text-accent mdi mdi-email-outline">
+
+                                            </span>
+                                            <div class="unit-body"><a class="text-accent" href="mailto:info@complicationinsure.com">@x.mail</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-xl-7">
+                            <div class="google-map-container" data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-zoom="5" data-styles="[{&quot;featureType&quot;:&quot;administrative&quot;,&quot;elementType&quot;:&quot;labels.text.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#444444&quot;}]},{&quot;featureType&quot;:&quot;landscape&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#f2f2f2&quot;}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;road&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:45}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;elementType&quot;:&quot;labels.icon&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#46bcec&quot;},{&quot;visibility&quot;:&quot;on&quot;}]}]" data-icon="images/gmap_marker.png" data-icon-active="images/gmap_marker_active.png">
+                                <div class="google-map"></div>
+                                <ul class="google-map-markers">
+                                    <li data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-description="9870 St Vincent Place, Glasgow"></li>
+                                </ul>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </section>
+    }
+    <!-- Get in Touch-->
+    <section class="section section-md bg-gray-100">
+        <div class="container">
+            <h3 class="text-center">Bize Ulaş</h3>
+            <div class="row justify-content-center">
+                <div class="col-lg-11 col-xl-9">
+                    @*RD Mailform*@
+                    @using (Html.BeginForm("Index", "Contact", FormMethod.Post, new { @id = "form1" }))
+                    {
+
+                        <div class="row row-x-16 row-20" id="msgDiv">
+                            <div class="col-md-6">
+                                <div class="form-wrap">
+                                    @Html.TextBoxFor(x => x.iltsm.AdSoyad, new { @class = "form-input mb-3 mb-md-0 mb-lg-0", @placeholder = "Adınız", @onkeypress = "return isLttrKey(event)", @required = "required" })
+                                    @Html.ValidationMessageFor(x => x.iltsm.AdSoyad, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Soyad" })
+                                      
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-wrap">
+                                    @Html.TextBoxFor(x => x.iltsm.mail, new { @class = "form-input mb-3 mb-md-0 mb-lg-0", @placeholder = "E-Posta", @onkeypress = "", @required = "required" })
+                                    @Html.ValidationMessageFor(x => x.iltsm.mail, null, new { @class = "text-danger", @type = "email", @style = "font-size:12px;", @id = "hata_sgettren_Eposta" })
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-wrap">
+                                    @Html.TextAreaFor(x => x.iltsm.mesaj, new { @class = "form-input mb-3 mb-md-0 mb-lg-0", @placeholder = "Mesajınız", @onkeypress = "", @required = "required" })
+                                    @Html.ValidationMessageFor(x => x.iltsm.mesaj, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Ad" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-wrap">
+                                    @Html.TextBoxFor(x => x.iltsm.phone, new { @class = "form-input mb-3 mb-md-0 mb-lg-0", @placeholder = "Telefonunuz", @onkeypress = " return isNumberKey(event)", @required = "required" })
+                                    @Html.ValidationMessageFor(x => x.iltsm.phone, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Tlfn" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-wrap form-button">
+                                    <button class="button button-block button-primary" id="msgbtn" onclick="ValidateMail();" type="submit">Gönder</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    @*Page Footer*@
+</body>
+</html>
+
+<script>
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+        function isLttrKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return true;
+            return false;
+    }
+
+    var Tlfn = document.getElementById("iltsm_phone");
+ 
+   
+
+    var karakterSinir = 10;
+
+    Tlfn.onkeyup = karakterKontrol;
+    Tlfn.onkeydown = karakterKontrol;
+
+
+    function karakterKontrol() {
+        var mesajUzunluk = this.value.length;
+
+        if (karakterSinir >= mesajUzunluk) {
+            var kalan = karakterSiniri - mesajUzunluk;
+
+        } else {
+            this.value = this.value.substr(0, karakterSinir);
+        }
+    }
+
+
+
+
+
+
+   
+</script>
+<script>
+    var Ad = document.getElementById("iltsm_AdSoyad");
+
+    var karakterSiniri = 20;
+
+    Ad.onkeyup = karakterKontrol;
+    Ad.onkeydown = karakterKontrol;
+
+
+    function karakterKontrol() {
+        var mesajUzunluk = this.value.length;
+
+        if (karakterSiniri >= mesajUzunluk) {
+            var kalan = karakterSiniri - mesajUzunluk;
+
+        } else {
+            this.value = this.value.substr(0, karakterSiniri);
+        }
+    }
+</script>

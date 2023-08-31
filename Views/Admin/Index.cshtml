@@ -1,0 +1,63 @@
+﻿@using website.Models.sınıflar;
+@model List<sigorta_edilen>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Poliçeler</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Ad-Soyad</th>
+                    <th>Pasaport No</th>
+                    <th>Telefon</th>
+                    <th>E-posta</th>
+                    <th>Sigorta Ettiren Kurum/Kişi</th>
+                    <th>Plan</th>
+                    <th>Fiyat</th>
+                    <th>Poliçe Tarihi</th>
+                    <th>Kesim Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                <tr id="tr">
+                    <td> @x.Ad - @x.Soyad </td>
+                    <td><a href="/Admin/KestigiPoliceler/@x.PasaportNo">@x.PasaportNo</a> </td>
+                    <td>(+@x.Tlfn_kdu) @x.Tlfn</td>
+                    <td> @x.Eposta</td>
+                    <td>
+
+                        @if (x.s_ettrn == "B")
+                        {<a href="/Admin/SigortaEttiren/@x.sigorta_Ettiren_brysel.ID">
+                                @x.sigorta_Ettiren_brysel.ID + @x.sigorta_Ettiren_brysel.sgettren_Soyad
+                            </a>
+                        }
+                        else if (x.s_ettrn == "T")
+                        {
+                            <a href="/Admin/SigortaEttirenT/@x.sigorta_ettiren_tuzel.ID"> @x.sigorta_ettiren_tuzel.VergiNo </a>
+                        }
+                        else if (x.s_ettrn == " ")
+                        {
+                            <a href="/Admin/SigortaEttirenK/@x.ID"> Kendisi</a>
+
+                        }
+                    </td>
+                    <td> @x.planID @x.ektmntID</td>
+                    <td> @x.cost</td>
+                    <td> Geliş: @x.Gtarihi.ToShortDateString() Tedavi : @x.Ttarihi.ToShortDateString() Dönüş : @x.Dontarihi.ToShortDateString()</td>
+                    <td> @x.KsmTrh</td>
+                </tr>
+                }
+            </tbody>
+     
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

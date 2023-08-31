@@ -1,0 +1,363 @@
+﻿﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TasarmLayout.cshtml";
+}
+
+@model website.Models.sınıflar.anasyf_price
+
+<!DOCTYPE html>
+
+@foreach (var y in Model.anasyfdgr)
+{
+    <html class="wide wow-animation" lang="utf-8">
+    <body>
+        <!-- FScreen-->
+
+        <section class="section parallax-container context-dark" data-parallax-img="../insre/images/bg-image-6-14.jpg">
+            <div class="parallax-content">
+                <div class="page-header-2-inner">
+                    <div class="container">
+                        <div class="block-custom">
+                            <h2 class="font-weight-extra-black wow clipInLeft " id="bslks" data-wow-delay=".1s">@y.Baslik1 </h2>
+                            
+
+                            <div class="group-xl group-middle ">
+                                <div><a class="button button-lg button-white button-shadow button-winona wow clipInLeft " href="#s" data-wow-delay=".2s">Bilgi Al</a></div>
+                                <div><a class="button button-lg button-primary button-shadow button-winona wow clipInLeft" href="/SignUp/Index" data-wow-delay=".2s">Doktor Kayıt</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <!-- Meet Us-->
+        <section class="section section-md bg-gray-100 text-center" >
+            <div class="container">
+                <div class="badge wow fadeIn">Teminatlar</div>
+                <h3 class="wow fadeIn">Neler Yapıyoruz ?</h3>
+                <div class="row row-30 row-xl-60">
+                    <div class="col-sm-6 col-lg-4"  data-bs-toggle="modal" data-bs-target="#myModal">
+                        <!-- Box Modern-->
+                        <article class="box-modern wow fadeIn" data-anime="circles-2">
+                            <div class="box-modern-media">
+                                <div class="box-modern-icon mdi mdi-hospital-building"></div>
+                                <div class="box-modern-circle box-modern-circle-1"></div>
+                            </div>
+                            <p class="box-modern-title">Yatarak Tedavi</p>
+                            <p class="box-modern-title">Teminatı</p><br>
+                            <div class="box-modern-text">
+                                <p >Tıbbi uygulamalar sonrasında gelişen komplikasyonları güvence altına alır.</p>
+                            </div>
+
+                        </article>
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-xl ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Yatarak Tedavi Teminatı</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body modal-xl ">
+                                        <p id="modl">
+                                            Sigortalıya Türkiye sınırları içerisinde Sağlık Turizmi Akreditasyon belgesine sahip bir sağlık kurumunda yapılan ameliyat, girişim, tıbbi uygulamalar sonrasında gelişen tıbbi komplikasyonlar bu teminat kapsamında poliçe ve sertifikada belirtilen teminat limitleri ve oranları doğrultusunda poliçe planlarında belirtilen tedaviler için ödenir.
+                                            Estetik ameliyatlarda ve diş tedavilerinde kişisel beğeniden doğan memnuniyetsizlikler bu poliçe kapsamında değildir.
+                                        </p>
+                                        <p id="modl">
+                                            Teminat sadece poliçede belirtilen ameliyat veya girişim için geçerli olup, ilgili poliçe planı dışında bir tıbbi tedavi veya uygulamadan doğan komplikasyonlar teminat dışındadır.
+                                            Komplikasyonun revizyon ameliyat veya girişimle tedavi edilmesi için gereken masraflar teminat altında olup, ameliyat / girişim sonrası gerekebilecek rehabilitasyon ve fizik tedavi giderleri kapsam dışıdır.
+                                            Yapılacak tıbbi işlem için gereken tetkikler ve ilaçlar da bu teminat kapsamında ödenir. Tıbbi girişimin gerektirdiği tanı ve ameliyat standart pre op tetkikler dışında yapılan teşhis işlemleri ve ameliyatla ilgili olmayan ilaçlar teminat dışıdır.
+                                        </p>
+                                        <p id="modl">
+                                            Gerek ilk ameliyat ve gerekse revizyon ameliyat / girişim öncesi ve sonrası destek tedavileri (serum takılması, destek ilaç tedavileri, kan şekeri, tansiyon düzenlemeleri gibi) ameliyatla bağlantılı olmayan diğer sağlık sorunları için yapılması planlanan/gereken ek inceleme ve takip tetkikleri bu poliçe kapsamında değildir.
+
+
+                                        </p>
+
+                                    </div>
+                                    <div class="modal-footer">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-bs-toggle="modal" data-bs-target="#myModal1">
+                        <!-- Box Modern-->
+                        <article class="box-modern wow fadeIn" data-anime="circles-2">
+                            <div class="box-modern-media">
+                                <div class="box-modern-icon mdi mdi-airplane"></div>
+                                <div class="box-modern-circle box-modern-circle-1"></div>
+                            </div>
+                            <p class="box-modern-title">Uçak Bileti </p>
+                            <p class="box-modern-title">Teminatı</p><br>
+                            <div class="box-modern-text">
+                                <p>Gelişen komplikasyonun tedavisi için uçak bileti teminini sağlar.</p>
+                            </div>
+                        </article>
+                        <div class="modal fade" id="myModal1">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Uçak Bileti Teminatı</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body modal-xl">
+                                        <p id="modl">
+                                            Sigortalının Türkiye’de uygulanan bir tedavi sonucu gelişen komplikasyonun tedavisi veya ameliyatın revizyonu gerekliliği halinde ülkesinden Türkiye’ye gelmek için ödediği ekonomik sınıf uçak bileti tutarı, poliçede belirtilen limit ve muafiyet ile ödenir. Uçak bileti teminat limiti bazı planlarda farklıdır, sertifikanızı kontrol ediniz. Teminat sertifika ve / veya poliçe üzerinde gösterilir. Uçak bileti teminatı 100 EUR muafiyetli olup ödenebilecek maksimum teminat tutarı plan bazında değişiklik gösterebilmekte olup, teminat limiti sertifika ve poliçede belirtilmiştir.
+                                        </p>
+                                        
+
+                                    </div>
+                                    <div class="modal-footer">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-bs-toggle="modal" data-bs-target="#myModal2">
+                        <!-- Box Modern-->
+                        <article class="box-modern wow fadeIn" data-anime="circles-2">
+                            <div class="box-modern-media">
+                                <div class="box-modern-icon mdi mdi-hotel"></div>
+                                <div class="box-modern-circle box-modern-circle-1"></div>
+                            </div>
+                            <p class="box-modern-title">Konaklama </p>
+
+                            <p class="box-modern-title">Teminatı</p>
+                            <div class="box-modern-text">
+                                <p>Tedavisi süresince, sağlık kurumu dışında yapmak zorunda olduğu konaklamalar içindir.</p>
+                            </div>
+                            <div class="modal fade" id="myModal2">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Konaklama Teminatı</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body modal-xl">
+                                            <p id="modl">
+                                                Sigortalının Türkiye’de uygulanan bir tedavi sonucu gelişen komplikasyonun tedavisi veya ameliyatın revizyonu gerekliliği halinde Türkiye’de tedavisi öncesinde ve sonrasında sağlık kurumu dışında yapmak zorunda olduğu konaklama giderleri günlük maksimum 100 EUR üst limit ve toplamda en fazla poliçe veya sertifikada belirtilen teminat limiti ile sınırlı olmak üzere bu teminat kapsamında ödenir. Konaklama giderleri için cerrahi planlarda 200 EUR/2 günlük diğer planlarda ise 100 EUR/ 1 günlük konaklama giderleri muafiyet kapsamında olup, poliçedeki bu muafiyet süresi tamamlandıktan sonra devam eden konaklamalar için teminat işletilir. Tıbbi gereklilik olmayan durumlarda isteğe bağlı konaklama teminat dışıdır. Konaklama gerekliliği tıbbi raporlar ile belirlenir.
+                                            </p>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-bs-toggle="modal" data-bs-target="#myModal3">
+                        <!-- Box Modern-->
+                        <article class="box-modern wow fadeIn" data-anime="circles-2">
+                            <div class="box-modern-media">
+                                <div class="box-modern-icon mdi mdi-home"></div>
+                                <div class="box-modern-circle box-modern-circle-1"></div>
+                            </div>
+                            <p class="box-modern-title">Kendi Ülkesinde Müdahale</p>
+                            <p class="box-modern-title">Teminatı</p>
+                            <div class="box-modern-text">
+                                <p>Sigortalının kendi ülkesine döndükten sonra geçirdiği tıbbi müdahaleyi güvence altına alır.</p>
+                            </div>
+                            <div class="modal fade" id="myModal3">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Kendi Ülkesinde Müdahale Teminatı</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body modal-xl">
+                                            <p id="modl">
+                                                İsteğe bağlı seçmeli olarak alınabilir. Sigortalının kendi ülkesine döndükten sonra geçirdiği tıbbi müdahale / 
+                                            ameliyatla ilgili yara yerinde akıntı, enfeksiyon gibi tekrar geri gelmesini gerektirmeyecek erken komplikasyonlara bağlı küçük girişimler ve 
+                                            tıbbi tedaviler bu teminat kapsamında
+                                            poliçe ve sertifikada belirtilen limitler dahilinde karşılanır.
+                                            </p>  
+                                            <p id="modl">
+                                                Sigortalının kendi ülkesinde gerçekleşen bu gibi giderleri tazmin edebilmesi için tıbbi rapor ve 
+                                                fatura aslını, ödemenin yapılabileceği banka hesap bilgisini (swift, IBAN) posta yolu ile göndermelidir.
+                                                Değerlendirme sonrası teminat kapsamında olan giderlere ilişkin ödeme teminat limitleri dahilinde 
+                                                sigortalı banka hesabına yapılır. Tazminat ödemelerinde, havale swift masrafları teminat limitlerinden 
+                                                düşülür.
+                                            </p>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-bs-toggle="modal" data-bs-target="#myModal4">
+                        <!-- Box Modern-->
+                        <article class="box-modern wow fadeIn" data-anime="circles-2">
+                            <div class="box-modern-media">
+                                <div class="box-modern-icon mdi mdi-human-male-female"></div>
+                                <div class="box-modern-circle box-modern-circle-1"></div>
+                            </div>
+                            <p class="box-modern-title">Refaktçi Giderleri</p>
+                            <p class="box-modern-title">Teminatı</p>
+                            <div class="box-modern-text">
+                                <p>Sigortalı ile birlikte Türkiye’ye gelecek bir refakatçi için ulaşım ve konaklama giderleri içindir.</p>
+                            </div>
+                            <div class="modal fade" id="myModal4">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Refakatçi Giderleri Teminatı</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body modal-xl">
+                                            <p id="modl">
+                                                Sadece Cerrahi ve Kalp Damar Cerrahisi planlarında isteğe bağlı seçmeli olarak alınabilir. İlgili teminat ve limitler Türkiye’de uygulanacak ilk girişim / ameliyat için geçerli değildir. Sigortalıya uygulanacak ikincil girişim sırasında poliçe teminatları devreye girdiğinde , sigortalı ile birlikte Türkiye’ye gelecek bir refakatçi için ulaşım ve konaklama giderleri poliçe ve sertifikada belirtilen teminat limitleri ve muafiyet kapsamında geri ödeme kapsamında karşılanır.
+                                            </p>
+                                            <p id="modl">
+                                                Hastanede bulunulan sürede oluşacak hastane faturasındaki refakatçi giderleri kapsam dışıdır.
+                                            </p>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-bs-toggle="modal" data-bs-target="#myModal5">
+                        <!-- Box Modern-->
+                        <article class="box-modern wow fadeIn" data-anime="circles-2">
+                            <div class="box-modern-media">
+                                <div class="box-modern-icon mdi mdi-ticket-account"></div>
+                                <div class="box-modern-circle box-modern-circle-1"></div>
+                            </div>
+                            <p class="box-modern-title">Seyehat Poliçesi</p>
+                            <p class="box-modern-title">Teminatı</p><br>
+                            <div class="box-modern-text">
+                                <p>Seyahat sağlık sigortası özel şartları kapsamında değerlendirilir.</p>
+                            </div>
+                            <div class="modal fade" id="myModal5">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Seyahat Poliçesi Teminatı</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body modal-xl">
+                                            <p id="modl">
+                                                Tüm planlarda bulunur. Sertifikada ve poliçede belirtilen sağlık, ambulans, tıbbi danışmanlık ve cenazenin nakli giderleri teminat limitleri ve seyahat sağlık sigortası özel şartları (ekli olarak ayrıca verilir) kapsamında değerlendirilir.
+                                            </p>
+                                        
+
+
+                                        </div>
+                                        <div class="modal-footer">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About App-->
+        <section class="section section-xl bg-accent" id="s">
+            <div class="container">
+                <div class="row row-50 justify-content-center flex-lg-row-reverse align-items-center justify-content-lg-between">
+                    <div class="col-sm-10 col-lg-5 wow fadeInRightSmall">
+                        <div class="badge">Hakkında</div>
+                        <h4>Sağlık Turizmi Komplikasyon Güvencesi Sigortası Nedir?</h4>
+                        <p class="big inset-2">Sağlık Turizmi Komplikasyon Güvencesi Sigortası, Türkiye’ye sağlık turizmi amaçlı gelen yabancı uyruklu kişilerin yaptırdıkları operasyon sonrası, bu operasyon kaynaklı gelişebilecek komplikasyonlar nedeniyle revizyon veya operasyonun yenilenmesinin gerektiği halleri teminat altına almaktadır. Operasyon sırasında oluşabilecek başkaca komplikasyon yada malpraktis sonucu doğacak hasarlar ve sigortalının ek hastalıkları nedenli yapılması gerekecek girişim ve incelemeler kapsam dışındadır. Poliçe, başlangıç tarihinden itibaren 6 ay süre ile geçerlidir.</p>
+
+                        <a class="button button-primary button-shadow button-winona font-weight-sbold" href="/Plans/Index">Detaylı İncele</a>
+                    </div>
+                    <div class="col-sm-10 col-lg-6 wow fadeInLeftSmall">
+                        <div class="thumbnail-classy">
+                            <div class="thumbnail-classy-image bg-image" style="background-image: url(/insre/images/web-app-2-650x500.jpg);"></div>
+                            <div class="thumbnail-classy-caption">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features-->
+        <section class="section section-lg">
+            <div class="container">
+                <div class="row row-50">
+                    <div class="container">
+                        <div class="badge">Planlar</div>
+                        <h3>Planlar</h3>
+                        <!-- Owl Carousel-->
+
+                        <div class="owl-carousel owl-carousel_profile-modern" data-items="1" data-sm-items="2" data-lg-items="3" data-xl-items="3" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
+                            <!-- Profile Modern-->
+
+                            @foreach (var x in Model.kmplkstnplndgr)
+                            {
+
+                                <article class="profile-modern" onclick="location.href='/Plans/Index';" style="cursor:pointer;">
+                                    <figure class="profile-modern-figure">
+                                        <img class="profile-modern-image" src="../@x.FotoUrl" alt="" width="369" height="315" />
+                                    </figure>
+                                    <div class="profile-modern-main">
+                                        <div class="profile-modern-main-item profile-modern-main-item_primary">
+                                            <h5 class="profile-modern-name">@x.Baslik </h5>
+                                            <p class="profile-modern-position">Prim :@x.plan_price.kumsz_prim <span style=" font-weight:700;">EUR</span> </p><br/>
+                                        </div>
+                                        <div class="profile-modern-main-item profile-modern-main-item_secondary" style="cursor:pointer;">
+                                            <h4 class="profile-modern-main-title"><a id="dty" href="/Plans/Index">Seç</a> </h4>
+                                            <div class="profile-modern-toggle mdi mdi-arrow-top-right"></div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Profile Modern-->
+
+                            }
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About our messenger-->
+        <section class="section parallax-container section-md bg-accent" data-parallax-img="../insre/images/bg-image-44.jpg" id="about-us">
+            <div class="parallax-content">
+                <div class="container">
+                    <div class="row row-50 justify-content-end">
+                        <div class="col-md-8 col-lg-7 col-xl-6">
+                            <div class="block-5 wow clipInLeft">
+                                <div class="badge wow clipInLeft">Complication Insure</div>
+                                <h3 class="wow clipInLeft" data-wow-delay=".1s"><span id="lst">Hadi</span><br><span style="font-weight:500;"  class="text-accent">İstediğin Planla Başla</span></h3>
+                                <p  id="lst" class="big wow clipInLeft inset-3" data-wow-delay=".2s">İstediğin planı seç ve hemen başla</p><a class="button button-default button-winona wow clipInLeft font-weight-sbold" href="/Buy/Index" data-wow-delay=".3s">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+
+
+
+        </script>
+
+
+
+    </body>
+</html>
+
+}

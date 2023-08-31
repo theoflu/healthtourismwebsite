@@ -1,0 +1,195 @@
+﻿
+@model  website.Models.sınıflar.signup
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TasarmLayout.cshtml";
+}
+<html class="wide wow-animation" lang="utf-8">
+
+<body>
+    <section class="breadcrumbs-custom">
+        <div class="breadcrumbs-custom-main context-dark">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-9">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12 mb-3 text-center">
+                                    <i class="fas fa-6x fa-hospital"></i>
+                                    <h4>Doktor musunuz?</h4>
+                                    <p>
+                                        Doktorsanız ve poliçe kesecekseniz bunu bize bildirin.<br />
+                                        Avantajlardan yararlanın.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumbs-custom-aside">
+            <div class="container">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/Anasayfa/Index">Ana Sayfa</a></li>
+                    <li class="active">Kayıt Ol</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="main-block">
+       
+        @using (Html.BeginForm("Index", "SignUp", FormMethod.Post))
+        {
+            <div class="title">
+                <i class="fas fa-pencil-alt"></i>
+                <h4><b>Kayıt Ol</b></h4>
+                <hr />
+            </div>
+            <div class="info">
+                <fieldset class="p-4">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                @Html.TextBoxFor(x => x.name, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Adınız", @onkeypress = "", @required = "required" })
+                                @Html.ValidationMessageFor(x => x.name, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Ad" })
+
+                            </div>
+                            @*<input class="fname" type="text" name="name" placeholder="Adınız ">*@
+                            <div class="col-md-4 mb-3">
+
+                                @Html.TextBoxFor(x => x.sname, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Soyadınız", @onkeypress = " ", @required = "required" })
+                                @Html.ValidationMessageFor(x => x.sname, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Soyad" })
+
+                            </div>
+                            @*<input class="fname" type="text" name="sname" placeholder="Soyadınız ">*@
+                            <div class="col-md-4 mb-3">
+
+                                @Html.TextBoxFor(x => x.psprtno, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Pasaport Numaranız / TC", @onkeypress = "", @required = "required" })
+                                @Html.ValidationMessageFor(x => x.psprtno, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_PasaportNo" })
+
+                            </div>
+                            @*<input type="password" name="psprtno" placeholder="Pasaport No.">*@
+                            <div class="col-md-4 mb-3">
+
+                                @Html.TextBoxFor(x => x.email, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Emailiniz", @onkeypress = "", @required = "required" })
+                                @Html.ValidationMessageFor(x => x.email, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Eposta" })
+
+                            </div>
+                            @*<input type="text" name="email" placeholder="Emailiniz">*@
+
+                            <div class="col-md-4 mb-3">
+                                @Html.TextBoxFor(x => x.telno, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Telefon Numaranız", @onkeypress = "return isNumberKey(event)", @required = "required" })
+                                @Html.ValidationMessageFor(x => x.telno, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Tlfn" })
+
+                            </div>
+                            @*<input type="text" name="telno" placeholder="Telefon Numaranız">*@
+                            <div class="col-md-4 mb-3">
+
+                                @Html.TextBoxFor(x => x.sclno, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Sicil No.", @onkeypress = "", @required = "required" })
+                                @Html.ValidationMessageFor(x => x.sclno, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sclno" })
+
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                @*<input type="text" name="sclno" placeholder="Sicil No.">*@
+                                @Html.PasswordFor(x => x.paswrd, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Şifre", @required = "required" })
+                                <span class="text-danger" style="font-size:12px;" id="hata_psw"></span>
+
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input type="password" id="pswrd" class="form-control mb-3 mb-md-0 mb-lg-0" placeholder="Tekrar Şifre" required />
+                                <span class="text-danger" style="font-size:12px;" id="hata_psw"></span>
+
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <span class="input100" style="text-align:right; font-size:14px;">Şifreyi Göster <i id="showPass" class="fa fa-eye"></i></span>
+                            </div>
+
+
+                            <div class="col-md-8 mb-3">
+                                @Html.CheckBoxFor(x => x.gzllk_ony, new { @type = "checkbox", @class = "form-checkbox mb-3 mb-md-0 mb-lg-0", @required = "required" })
+
+                                <span style="font-weight:700;" class=" mb-3 mb-md-0 mb-lg-0">Complication Insure <a href="~/insre/policies/gizlilik_politikası.pdf" target="_blank">Gizlilik Politikasını </a> Kabul Ediyorum.</span> <br />
+                            </div>
+
+                            <span class="text-danger " font-size="12px;">    @Html.ValidationSummary()</span>
+
+                        </div>
+                        <div class="col-12 text-center mt-2 mb-3">
+                            <button type="submit" class="btn btn-primary btn-sm text-center" id="kytbtn" href="">Kayıt Ol</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+        }
+    </div>
+    <script>
+
+
+
+
+
+        var Tlfn = document.getElementById("telno");
+
+
+        var karakterSinir = 10;
+
+        Tlfn.onkeyup = karakterKontrol;
+        Tlfn.onkeydown = karakterKontrol;
+        function karakterKontrol() {
+            var mesajUzunluk = this.value.length;
+
+            if (karakterSinir >= mesajUzunluk) {
+                var kalan = karakterSiniri - mesajUzunluk;
+
+            } else {
+                this.value = this.value.substr(0, karakterSinir);
+            }
+        }
+    </script>
+    <script>
+        "use strict";
+        var Ad = document.getElementById("name");
+        var Soyad = document.getElementById("sname");
+        var spsp = document.getElementById("psprtno");
+        var scl = document.getElementById("sclno");
+        var karakterSiniri = 20;
+
+        Ad.onkeyup = karakterKontrol;
+        Ad.onkeydown = karakterKontrol;
+        Soyad.onkeyup = karakterKontrol;
+        Soyad.onkeydown = karakterKontrol;
+        spsp.onkeyup = karakterKontrol;
+        spsp.onkeydown = karakterKontrol;
+        scl.onkeyup = karakterKontrol;
+        scl.onkeydown = karakterKontrol;
+
+
+        function karakterKontrol() {
+            var mesajUzunluk = this.value.length;
+
+            if (karakterSiniri >= mesajUzunluk) {
+                var kalan = karakterSiniri - mesajUzunluk;
+
+            } else {
+                this.value = this.value.substr(0, karakterSiniri);
+            }
+        }
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+
+   
+
+
+</body>
+</html>

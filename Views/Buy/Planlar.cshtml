@@ -1,0 +1,75 @@
+﻿
+@using website.Models.sınıflar;
+@model List<kmplksyn_plan>
+
+<h4 class="display-4 text-center">Poliçe Seçim Formu</h4>
+<div class="p-5">
+    <div class="col-md-12 mb-3">
+        <div class="row">
+            <div class="owl-carousel owl-carousel_profile-modern" data-items="1" data-sm-items="2" data-lg-items="3" data-xl-items="4" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
+                @foreach (var x in Model)
+                {
+
+                    <article class="profile-modern">
+                        <figure class="profile-modern-figure rounded-2">
+                        </figure>
+                        <div class="profile-modern-main">
+                            <div class="profile-modern-main-item profile-modern-main-item_primary">
+                                <h4 class="profile-modern-name" id="baslk">@x.Baslik </h4><br><br>
+                                <p class="profile-modern-position"></p><br>
+                            </div>
+                            <div class="profile-modern-main-item profile-modern-main-item_secondary">
+                                <h4 class="profile-modern-main-title"> <label id="dty" onclick="fcc(@x.ID)">Seç</label> </h4>
+                                <div class="profile-modern-toggle mdi mdi-arrow-top-right"></div>
+                            </div>
+                        </div>
+                    </article>
+
+
+
+                }
+            </div>
+            <h2 id="planPrice" style="font-weight:500;  line-height:1; font-size:20px!important;" class="planPrice m-0 pb-0 pt-3 pl-3"></h2>
+
+            <div class="col-12 text-center mt-4">
+                <button class="ozlbtnn button button-sm   button-shadow button-winona  wow clipInLeft " id="btn_Plan1" onclick="" type="button">  Kendi Ülkesinde Müdahale Dahil + Refakatçi Dahil </button>
+            </div>
+            <div class="col-12 text-center mt-4">
+                <button class="ozlbtn button button-sm button-shadow button-winona  wow clipInLeft  " id="btn_Plan" onclick="" type="button"> Kendi Ülkesinde Müdahale Dahil </button>
+            </div>
+            <div class="col-12 text-center mt-4">
+                <button class="ozlbtnnn button button-sm  button-shadow button-winona wow clipInLeft " id="btn_Plan2" onclick="" type="button"> Refakatçi Dahil </button>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    //$("#btngetbyid").click(x => {
+    //    let id = $("#wid").val();
+    //            $.ajax({
+    //                contentType: "application/json",
+    //                dataType: "json",
+    //                type: "get",
+    //                url: '/pln_sc/Getid',
+    //                data: { ID: id },
+    //                success: function (func) {
+    //                    console.log(func);
+    //                }
+
+    //            });
+    //    });
+
+
+
+
+
+
+
+
+
+</script>

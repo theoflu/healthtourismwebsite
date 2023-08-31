@@ -1,0 +1,465 @@
+﻿﻿
+@model website.Models.sınıflar.ForBuy
+
+@using (Html.BeginForm("Index", "Buy", FormMethod.Post, new { @id = "form1" }))
+{
+    <h3 id="bslks" class="display-5 text-center">Healthcare Tourism Complication Covarege Insurance</h3>
+    <h4 class="display-6 text-center">Poliçe Plan Seçimi</h4>
+    <div class="p-5">
+        <div class="col-md-16 mb-4">
+            <div class="row">
+                <div class="owl-carousel owl-carousel_profile-modern" data-items="1" data-sm-items="2" data-lg-items="3" data-xl-items="3" data-dots="true"  data-nav="false" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
+                    @foreach (var x in Model.planLists)
+                    {
+
+                        <article class="profile-modern" id="m-@x.ID" onclick="fcc(@x.ID); " style="cursor:pointer;">
+                            <figure class="profile-modern-figure " >
+                                <img class="profile-modern-image"  src="../@x.FotoUrl" alt="" width="369" height="315" />
+                            </figure>
+                            <div class="profile-modern-main"  >
+                                <div class="profile-modern-main-item profile-modern-main-item_primary">
+                                    <h4 class="profile-modern-name" id="baslk">@x.Baslik </h4>
+                                    <p class="profile-modern-position">Prim :@x.plan_price.kumsz_prim <span style=" font-weight:700;">EUR</span>  </p><br>
+                                </div>
+
+                                @*<div class="profile-modern-main-item profile-modern-main-item_secondary" style="cursor:pointer;">
+                                    <h4 class="profile-modern-main-title"> <label id="dty" onclick="fcc(@x.ID)">Seç</label> </h4>
+                                    <div class="profile-modern-toggle mdi mdi-arrow-top-right"></div>
+                                </div>*@
+                            </div>
+                        </article>
+
+
+
+                    }
+                </div>
+                <h2 id="planPrice" style="font-weight:500;  line-height:1; font-size:18px!important;" class="planPrice m-0 pb-0 pt-3 pl-3"></h2>			<h2 style="font-weight:500;  line-height:1; font-size:18px!important;" class=" text-center m-0 pb-0 pt-3 pl-3">Ek teminat ister misiniz?</h2>
+                @Html.TextBoxFor(x => x.db.planID, "Prim", new { @class = "planID ", @hidden = "hidden" })
+                @Html.TextBoxFor(x => x.db.ektmntID, "Prim", new { @class = "ektmntID ", @hidden = "hidden" })
+                @Html.TextBoxFor(x => x.db.cost, "Prim", new { @class = "cost ", @hidden = "hidden" })
+
+                <div class="col-12 text-center mt-4" id="km_rf">
+                    <button class="ozlbtnn button button-xs  button-shadow button-winona   " id="btn_Plan1" onclick="" type="button">  Kendi Ülkesinde Müdahale Dahil + Refakatçi Dahil </button>
+                </div>
+                <div class="col-12 text-center mt-4">
+                    <button class="ozlbtn button button-xs button-shadow button-winona  wow clipInLeft  " id="btn_Plan" onclick="" type="button"> Kendi Ülkesinde Müdahale Dahil </button>
+                </div>
+                <div class="col-12 text-center mt-4" id="rf">
+                    <button class="ozlbtnnn button button-xs button-shadow button-winona  " id="btn_Plan2" onclick="" type="button"> Refakatçi Dahil </button>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="sgtl_scrollDiv">
+        <fieldset class="p-4">
+
+
+
+            <legend class="row mb-2 text-color-7">Sigortalı Bilgileri</legend>
+            <hr id="hr">
+
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(x => x.db.Ad, "Adı", new { @class = "col-form-label" })
+                        @Html.TextBoxFor(x => x.db.Ad, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Adı", @onkeypress = "return isLttrKey(event)", @required = "required" })
+
+                        @Html.ValidationMessageFor(x => x.db.Ad, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Ad" })
+                    </div>
+                    <div class="col-md-3">
+                        @Html.LabelFor(x => x.db.Soyad, "Soyadı", new { @class = "col-form-label" })
+                        @Html.TextBoxFor(x => x.db.Soyad, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Soyadı", @onkeypress = "return isLttrKey(event)", @required = "required" })
+                        @Html.ValidationMessageFor(x => x.db.Soyad, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Soyad" })
+
+                    </div>
+                    <div class="col-md-3">
+                        @Html.LabelFor(x => x.db.BabaAdi, "Baba Adı", new { @class = "col-form-label" })
+                        @Html.TextBoxFor(x => x.db.BabaAdi, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Baba Adı", @onkeypress = "return isLttrKey(event)", @required = "required" })
+                        @Html.ValidationMessageFor(x => x.db.BabaAdi, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_BabaAdi" })
+                    </div>
+                    <div class="col-md-3">
+
+                        @Html.LabelFor(x => x.db.PasaportNo, "Pasaport No.", new { @class = "col-form-label" })
+                        @Html.TextBoxFor(x => x.db.PasaportNo, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Pasaport No.", @required = "required" })
+                        @Html.ValidationMessageFor(x => x.db.PasaportNo, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_PasaportNo" })
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(x => x.db.Dtarihi, "Doğum Tarihi", new { @class = "col-form-label" })
+                        @Html.TextBoxFor(m => m.db.Dtarihi, new { @class = "datepicker form-control  mb-3 mb-md-0 mb-lg-0", @placeholder = "GG/AA/YYYY", @required = "required" })
+
+                        @Html.ValidationMessageFor(x => x.db.Dtarihi, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Dtarihi" })
+                    </div>
+                    <div class="col-md-3">
+
+                        @Html.LabelFor(x => x.db.Dyeri, "Doğum Yeri", new { @class = "col-form-label" })
+                        @Html.TextBoxFor(x => x.db.Dyeri, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Doğum Yeri", @onkeypress = "return isLttrKey(event)", @required = "required" })
+                        @Html.ValidationMessageFor(x => x.db.Dyeri, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Dyeri" })
+                    </div>
+                    <div class="col-md-3">
+                        @Html.LabelFor(x => x.db.Uyruk, "Uyruk", new { @class = "col-form-label" })
+                        @Html.DropDownListFor(m => m.db.Uyruk, (List<SelectListItem>)ViewBag.Uyruk, "Uyruk", new { @class = "form-control mb-3 mb-md-0 mb-lg-0", })
+                        @Html.ValidationMessageFor(x => x.db.Uyruk, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Uyruk" })
+                    </div>
+
+                    <div class="col-md-3">
+                        @Html.LabelFor(x => x.db.Cinsiyet, "Cinsiyet", new { @class = "col-form-label" })
+                        @Html.DropDownListFor(x => x.db.Cinsiyet,
+                         new List<SelectListItem> {
+                             new SelectListItem {
+                                Text="Kadın",
+                                Value="K",
+                                // Selected = true, seçili olarak gelsin
+                                // Disabled = true  disable olarak gelsin istersek kullanıyoruz
+                             },
+                             new SelectListItem {
+                                Text="Erkek",
+                                Value="E",
+                             },
+                         }, "Cinsiyet Seçiniz", new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @required = "required" })
+                        @Html.ValidationMessageFor(x => x.db.Cinsiyet, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Cinsiyet" })
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(x => x.db.Tlfn_kdu, "Ülke Kodu", new { @class = "col-form-label" })
+                        @Html.DropDownListFor(m => m.db.Tlfn_kdu, (List<SelectListItem>)ViewBag.Tlfn_kdu, "Ülke Kodu", new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @required = "required" })
+
+                        @Html.ValidationMessageFor(x => x.db.Tlfn_kdu, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Tlfn_kdu" })
+
+                    </div>
+                    <div class="col-md-3">
+                        @Html.LabelFor(x => x.db.Tlfn, "Telefon Numarası", new { @class = "col-form-label" })
+                        @Html.TextBoxFor(x => x.db.Tlfn, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Telefon Numarası", @onkeypress = "return isNumberKey(event)", @required = "required" })
+                        @Html.ValidationMessageFor(x => x.db.Tlfn, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Tlfn" })
+                    </div>
+                    <div class="col-md-3">
+                        @Html.LabelFor(x => x.db.Eposta, "E-Posta", new { @class = "col-form-label" })
+                        @Html.TextBoxFor(x => x.db.Eposta, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "E-Posta", @required = "required" })
+                        @Html.ValidationMessageFor(x => x.db.Eposta, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Eposta" })
+                        @*<small  id="hata"></small>*@
+                    </div>
+
+                </div>
+                <div class="col-12 text-center mt-4">
+                    <h7 class=" "><strong>Sigortalı ve Sigorta Ettiren Aynı Kişi mi?</strong></h7>
+                    <br>
+
+                    <div class="form-check form-switch">
+
+
+                        @Html.CheckBoxFor(x => x.db.soru, new { @type = "checkbox", @class = "form-check-input" })
+                        <span class="txtsr">Hayır</span><br />
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </fieldset>
+    </div>
+    <div class="farkli_k" id="farkli_k">
+        <fieldset class="p-4" id="secnk">
+            <legend class="row mb-2">Sigorta Ettiren Bilgileri</legend>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-3" id="s_ettrn_scrollDiv">
+                        <label class="col-form-label" id="etkt">Bireysel </label>
+                        @Html.RadioButtonFor(m => m.db.s_ettrn, "B", new { @checked = "checked", @onclick = "" })
+
+
+                    </div>
+                    <div class="col-md-3">
+                        <label class="col-form-label" id="etkt">Tüzel </label>
+                        @Html.RadioButtonFor(m => m.db.s_ettrn, "T", new { @onclick = "" })
+                    </div>
+                </div>
+            </div>
+            <hr id="hr">
+
+        </fieldset>
+        <div id="sigorta-ettiren-form" class="sigorta-ettiren-form ">
+            <fieldset class="p-4">
+                <div class="col-md-12">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Ad, "Adı", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Ad, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Adı", @onkeypress = "return isLttrKey(event)" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Ad, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Ad" })
+
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Soyad, "Soyadı", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Soyad, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Soyadı", @onkeypress = "return isLttrKey(event)" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Soyad, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Soyad" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_BabaAdi, "Baba Adı", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_Ettiren_brysel.sgettren_BabaAdi, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Baba Adı", @onkeypress = "return isLttrKey(event)" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_BabaAdi, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_BabaAdi" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_PasaportNo, "Pasaport No.", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_Ettiren_brysel.sgettren_PasaportNo, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Pasaport No." })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_PasaportNo, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_PasaportNo" })
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Dtarihi, "Doğum Tarihi", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Dtarihi, new { @class = "datepicker form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "GG/AA/YYYY" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Dtarihi, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Dtarihi" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Dyeri, "Doğum Yeri", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Dyeri, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Doğum Yeri", @onkeypress = "return isLttrKey(event)" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Dyeri, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Dyeri" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Uyruk, "Uyruk", new { @class = "col-form-label" })
+                            @Html.DropDownListFor(m => m.db.sigorta_Ettiren_brysel.sgettren_Uyruk, (List<SelectListItem>)ViewBag.Uyruk, "Uyruk", new { @class = "form-control", })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Uyruk, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Uyruk" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Cinsiyet, "Cinsiyet", new { @class = "col-form-label" })
+                            @Html.DropDownListFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Cinsiyet,
+                             new List<SelectListItem> {
+                                 new SelectListItem {
+                                    Text="Kadın",
+                                    Value="K",
+                                    // Selected = true, seçili olarak gelsin
+                                    // Disabled = true  disable olarak gelsin istersek kullanıyoruz
+                                 },
+                                 new SelectListItem {
+                                    Text="Erkek",
+                                    Value="E",
+                                 },
+                             }, "Cinsiyet Seçiniz", new { @class = "form-control mb-3 mb-md-0 mb-lg-0" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Cinsiyet, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Cinsiyet" })
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Tlfn_kdu, "Ülke Kodu", new { @class = "col-form-label" })
+                            @Html.DropDownListFor(m => m.db.sigorta_Ettiren_brysel.sgettren_Tlfn_kdu, (List<SelectListItem>)ViewBag.Tlfn_kdu, "Ülke Kodu", new { @class = "form-control mb-3 mb-md-0 mb-lg-0" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Tlfn_kdu, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Tlfn_kdu" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Tlfn, "Telefon", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Tlfn, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Telefon", @onkeypress = "return isNumberKey(event)" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Tlfn, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Tlfn" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Eposta, "E-Posta", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Eposta, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "E-Posta" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_Ettiren_brysel.sgettren_Eposta, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_sgettren_Eposta" })
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div id="tuzel-form" class="sigorta-ettiren-form gizli">
+            <fieldset class="p-4">
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_ettiren_tuzel.VergiNo, "Vergi No", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_ettiren_tuzel.VergiNo, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Vergi No", @onkeypress = "return isNumberKey(event)" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_ettiren_tuzel.VergiNo, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_VergiNo" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_ettiren_tuzel.VTlfn, "Telefon", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_ettiren_tuzel.VTlfn, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "Telefon", @onkeypress = "return isNumberKey(event)" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_ettiren_tuzel.VTlfn, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_VTlfn" })
+                        </div>
+                        <div class="col-md-3">
+                            @Html.LabelFor(x => x.db.sigorta_ettiren_tuzel.VEposta, "E-Posta", new { @class = "col-form-label" })
+                            @Html.TextBoxFor(x => x.db.sigorta_ettiren_tuzel.VEposta, new { @class = "form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "E-Posta" })
+                            @Html.ValidationMessageFor(x => x.db.sigorta_ettiren_tuzel.VEposta, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_VEposta" })
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+    <fieldset class="p-4">
+        <legend class="row mb-2">Sigortalı Seyehat Detayları</legend>
+        <hr id="hr">
+        <div class="col-md-12" id="seyahatDetaylariScroll">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    @Html.LabelFor(x => x.db.Gtarihi, "Geliş Tarihi", new { @class = "col-form-label" })
+                    @Html.TextBoxFor(m => m.db.Gtarihi, new { @class = "datepicker datepicker-today form-control mb-3 mb-md-0 mb-lg-0 ", @placeholder = "GG/AA/YYYY" })
+                    @Html.ValidationMessageFor(x => x.db.Gtarihi, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Gtarihi" })
+                </div>
+                <div class="col-md-4 mb-3">
+                    @Html.LabelFor(x => x.db.Ttarihi, "Tedavi Tarihi", new { @class = "col-form-label" })
+                    @Html.TextBoxFor(m => m.db.Ttarihi, new { @class = "datepicker datepicker-today form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "GG/AA/YYYY", @disabled = "disabled" })
+                    @Html.ValidationMessageFor(x => x.db.Ttarihi, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Ttarihi" })
+                </div>
+                <div class="col-md-4 mb-5">
+                    @Html.LabelFor(x => x.db.Dontarihi, "Dönüş Tarihi", new { @class = "col-form-label" })
+                    @Html.TextBoxFor(m => m.db.Dontarihi, new { @class = "datepicker datepicker-today form-control mb-3 mb-md-0 mb-lg-0", @placeholder = "GG/AA/YYYY", @disabled = "disabled" }) @*@disabled="disabled"*@
+                    @Html.ValidationMessageFor(x => x.db.Dontarihi, null, new { @class = "text-danger", @style = "font-size:12px;", @id = "hata_Dontarihi" })
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-30" id="sgrt_edln_ony">
+            <fieldset>
+                <legend class="row mb-2 text-color-7">Onaylar</legend>
+                <hr />
+                <div class="row">
+                    <div class="col-md-30">
+                        @Html.CheckBoxFor(x => x.db.ony3, new { @style = "vertical-align: middle; margin: 0px;", @class = "checkbox-inline" })
+
+                        <label style="font-size: 10px ;" class="col-form-label" data-bs-toggle="modal" data-bs-target="#myModal">Avantajlı ürün, hizmet ve kampanyalardan haberdar olmak istiyorum.</label>
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">İLETİŞİM İZİNLERİ HAKKINDA ONAY</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <p>Complication Insure tarafından doğrudan ya da SMS, resim, animasyon, kısa mesaj, multimedya nesneleri içeren MMS, telefon, faks, otomatik arama makineleri, elektronik posta ve benzeri kanallardan iletilecek veri, ses ve görüntü içerikli bilgilendirme, tanıtım ve pazarlama iletilerinin tarafıma gönderilmesini, dilediğim zaman tamamen veya ürün ve kanal bazında veri, ses, görüntü vb. her türlü ileti gönderimini reddetme hakkını haiz olduğumu bildiğimi kabul ve beyan ederim.</p>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-30">
+
+                        @Html.CheckBoxFor(x => x.db.ony, new { @style = "vertical-align: middle; margin: 0px;", @required = "required" })
+                        <span class="checkmark" id="hata_ony"></span>
+
+                        <label style="color: #24d366; font-weight: 900; font-size: 10px;" class="col-form-label" data-bs-toggle="modal" data-bs-target="#myModal2">Kişisel Verilerin Korunması Kanunu kapsamındaki aydınlatma metnini okudum, anladım, bu kapsamında verilerimin işlenmesine açık rıza veriyorum.</label>
+                        <div class="modal fade" id="myModal2">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">1. Kişisel VerilerinKorunması Kanunu Hakkında Genel Bilgilendirme</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body modal-xl">
+
+                                        <p>6698 Sayılı Kişisel Verilerin Korunması Kanunu (bundan sonra “KVKK” olarak anılacaktır) 07 Nisan 2016 tarihli 29677 sayılı Resmi Gazete’de yayınlanmıştır.</p>
+                                        <h5 style="color: red;">2. Veri Sorumlusu Sıfatıyla Bilgilendirme</h5>
+                                        <ul>
+                                            <li>
+                                                <p>* Şirketimiz veri sorumlusu olarak Demir Sağlık ve Hayat Sigorta Anonim Şirketi unvanı ile kişisel verilerinizi ve özel nitelikli kişisel verilerinizi, KVKK kapsamında mevzuatın gerektirdiği ölçüde ve aşağıda açıkladığımız çerçevede işleyebilecek, kaydedebilecek, saklayabilecek, sınıflandırabilecek, güncelleyebilecek ve işleneceği amaç için geçerli olan durumlarda 3. kişilere açıklayabilecek / aktarabilecektir.</p>
+                                            </li>
+                                            <li>
+                                                <p>* Şirketimiz 6102 sayılı Türk Ticaret Kanunu ve 5684 sayılı Sigortacılık Kanunu başta olmak üzere tüm ulusal ve uluslararası mevzuat kapsamında sağlık sigortacılığı ve hayat sigortacılığı ürün ve hizmetlerini sunabilmek, sigortacılık faaliyeti kapsamında yükümlülüklerini yerine getirebilmek ve gerekli işlemlerin tesis edilmesi, yürütülmesi ve geliştirilmesini sağlamak, kurulacak ve kurulmuş olan sigorta sözleşmelerinin gereğinin yerine getirilmesi; gerçekleştirilecek her türlü iş ve işlemin sahibini ve ilgisini belirlemek üzere bilgilerini tespit etmek için kimlik, iletişim, adres ve sağlık verileri dahil tüm gerekli bilgileri kaydetmek, fiziki veya elektronik ortamda gerçekleştirilebilecek iş ve işlemlere dayanak olacak tüm kayıt ve belgeleri tanzim etmek, ulusal ve uluslararası mevzuat uyarınca adli ve idari tüm yetkili mercilerce (Hazine ve Maliye Bakanlığı, Mali Suçları Araştırma Kurulu (“MASAK”), Sigorta Bilgi ve Gözetim Merkezi (“SBGM”), Adli Merciler gibi) öngörülen bilgi saklama, raporlama ve bilgilendirme yükümlülüklerini yerine getirmek ve meşru menfaatleri kapsamında güvenliği sağlamak amaçlarıyla kişisel verileriniz ve özel nitelikli kişisel verileriniz işlenmektedir. Şirketimizce sigorta poliçesi tanzimi öncesinde ve sözleşmenin kurulması sonrasında yükümlülüklerini yerine getirmek ve tazminat ödemeleri kapsamında, gerek risk ölçümü yapabilmek, gerekse tazminat taleplerini değerlendirebilmek için sigorta sözleşmesi tarafının/sigortalının/sigorta sözleşmesi kapsamında hak sahibinin kişisel verileri, sağlığıyla ilgili özel nitelikli kişisel verilerinin işlenmesi gereklidir. Şirketimiz, kendisinin, sigorta ettirenin, sigortalı ile sigorta sözleşmesi kapsamında hak sahiplerinin haklarını kullanabilmelerini ve meşru menfaatlerini korumalarını teminen sigorta ettire- nin/sigortalının/hak sahiplerinin sağlığıyla ilgili kişisel verilerini elde etmek, değerlendirmek, acente- leri, brokerleri başta olmak üzere aracıları ile reasürörleri, iş ortakları, asistans firmaları, anlaşmalı kurumları ve başta destek hizmeti olmak üzere hizmet aldığı 3. şahıslarla paylaşmak ve mevzuatın izin verdiği süre boyunca kişisel verileri saklamak zorundadır.</p>
+                                                <p>* Sağlık bilgileri, KVKK’nın amir hükümleri ile Şirketimizin Veri Koruma Politikasına uygun olarak sigortacılık faaliyetlerimizi yerine getirmek üzere kısmen, otomatik veya otomatik olmayan yollarla fiziki veya elektronik ortamlarda işlenmektedir. Şirketimizce kişisel verileriniz ve\veya özel nitelikli kişisel verilerinize ilişkin açık rızalarınız; işbu sözleşme ile tarafımızca veya Genel Müdürlük/Bölge Müdürlüğü çalışanları tarafından, acentelerimiz, brokerlerimiz, internet sitemiz, internet uygulamalarımız ve çağrı merkezimiz tarafından sizlerin tercihlerine göre sözlü, yazılı veya elektronik ortamda toplanacaktır.</p>
+                                            </li>
+                                            <li><p>* 6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun, 6502 sayılı Tüketicinin Korunması Hakkında Kanun ile bu düzenlemelere dayanak yapılarak hazırlanan 26.08.2015 tarihli 29457 sayılı Resmi Gazete’de yayımlanan Elektronik Ticarette Hizmet Sağlayıcı ve Aracı Hizmet Sağlayıcılar Hakkında Yönetmelik, 27.11.2014 tarihli ve 29188 sayılı Resmi Gazete’de yayımlanan Mesafeli Sözleşmeler Yönetmeliği ve diğer ilgili mevzuat kapsamında işlem sahibinin bilgilerini tespit için kimlik, iletişim, adres ve diğer gerekli bilgiler kaydedilmek suretiyle işlenmektedir.</p></li>
+                                            <li><p>* Şirketimize ilettiğiniz kişisel verileriniz ve özel nitelikli kişisel verileriniz ihtiyaçlarınız ve talepleriniz doğrultusunda size uygun ürün, teklif, avantaj veya kampanyalardan yararlanabilmeniz, satış da dahil olmak üzere, bilgilendirme yapılması ve tarafınızla her türlü iletişimin sağlanması amacıyla işlenmekte ve bu doğrultuda kişisel bilgilerinizin, Şirket ve Şirket adına hizmet verenler, acenteleri ve brokerları tarafından, doğrudan ya da SMS, resim, animasyon, kısa mesaj, multimedya nesneleri içeren MMS, telefon, faks, otomatik arama makineleri, elektronik posta ve benzeri iletişim kanallarından iletilecek veri, ses ve görüntü içerikli bilgilendirme, tanıtım ve pazarlama iletilerinin tarafınıza gönderilmesi kapsamında kişisel verileriniz ve özel nitelikli kişisel verileriniz işlenmektedir.</p></li>
+                                            <li>
+                                                <p>* Bankacılık ve Elektronik Ödeme alanında zorunlu olan ödeme sistemleri, elektronik sözleşme veya kağıt ortamında işleme dayanak olacak tüm kayıt ve belgeleri düzenlemek; mevzuat gereği ve diğer otoritelerce öngörülen bilgi saklama, depolama, raporlama, bilgilendirme yapmak veri sorumlusunun yükümlülüğündedir.</p>
+                                            </li>
+                                        </ul>
+                                        <h5 style="color: red;">3. Kişisel Verilerinizin Paylaşılma Amaçları Ve Aktarılan Yerler</h5>
+                                        <p>Şirketimiz ile paylaştığınız kişisel verileriniz ve özel nitelikli kişisel verileriniz,</p>
+
+                                        <p>* Sigorta sözleşmesiyle üstlenilen yükümlülükleri yerine getirebilmek için iş ortaklarımızla, reasürörlerimizle, sözleşmeli avukatlarımızla, başta destek hizmeti olmak üzere hizmet alınan firmalarla, acentelerimiz ve brokerlerimizle,</p>
+                                        <p>* Sağlıkla ilgili özel nitelikli kişisel verileriniz ile kişisel verileriniz, poliçe yapılması aşamasında sigortalı adayının sağlık durumu konusunda uzman görüşü veren, değerlendirme yapan kişi ve kuruluşlarla,</p>
+                                        <p>* Tazminat başvurularında ise, yurt içinde ya da yurt dışında yapılacak sağlık işlemini inceleyerek onay veren provizyon hizmet kuruluşlarıyla,</p>
+                                        <p>* Özürlülük ve çalışma gücü kaybı seviyelerini içeren raporları değerlendiren ya da belirleyen kuruluşlarla,</p>
+                                        <p>* Sağlık konusunda asistans hizmeti veren 3.kişilerle ve diğer anlaşmalı kuruluşlarla,</p>
+                                        <p>* Resürans Anlaşmaları kapsamında yurtdışında bulunan (Kişisel Veriler Kurulu tarafından akredite edilen ve kişisel verilerin korunması hususunda yeterli korumanın bulunduğu ülkelere) hizmet aracıları ve reasürörler ile,</p>
+                                        <p>* Vefat ve maluliyet söz konusu ise aktüeryal hesaplama yapmak üzere aktüerlerle,</p>
+                                        <p>* Kargo şirketleri gibi sunulan hizmetler ile ilgili kişi ve kuruluşlarla, ve diğer sigorta şirketleri ile</p>
+                                        <p>* Faaliyetlerimizi yürütmek üzere ve/veya Veri İşleyen sıfatı ile hizmet alınan, iş birliği yaptığımız program ortağı kuruluşları, yurtiçi / yurtdışı kuruluşlarla</p>
+                                        <p>* Ulusal ve uluslararası mevzuat uyarınca adli ve idari tüm yetkili mercilerce (Hazine ve Maliye Bakanlığı, MASAK, SBGM, Adli Merciler gibi) talep edilen hususların yerine getirilmesi ve meşru menfaatleri sağlamak amacıyla ilgili merciler, kurum ve kuruluşlarla paylaşılmaktadır.</p>
+                                        <h5 style="color: red;">4. KVKK Uyarınca Kişisel Veri Sahibinin Hakları</h5>
+                                        <p>Kişisel Veri Sahibi, Şirketimize başvurarak kendisiyle ilgili;</p>
+                                        <p>* Kişisel veri ve özel nitelikli kişisel veri işlenip işlenmediğini öğrenme,</p>
+                                        <p>* Kişisel veri ve özel nitelikli kişisel veri işlenip işlenmediğini öğrenme,</p>
+                                        <p>* Kişisel verilerin ve özel nitelikli kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</p>
+                                        <p>* Yurt içinde veya yurt dışında kişisel verilerin ve özel nitelikli kişisel verilerin aktarıldığı üçüncü kişileri bilme,</p>
+                                        <p>* Kişisel verilerin ve özel nitelikli kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme,</p>
+                                        <p>* KVKK’ nın 7. maddesinde öngörülen şartlar çerçevesinde kişisel verilerin ve özel nitelikli kişisel verilerin silinmesini veya yok edilmesini isteme,</p>
+                                        <p>* Kişisel verilerin düzeltilmesi, silinmesi, yok edilmesi halinde bu işlemlerin, kişisel verilerin aktarıldığı üçüncü kişilere de bildirilmesini isteme,</p>
+                                        <p>* İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,</p>
+                                        <p>* Kişisel verilerin ve özel nitelikli kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme haklarına sahiptir.</p>
+                                        <p>* Kişisel Veri Sahipleri, sorularını, görüşlerini veya taleplerini Bilgilendirme Metni ve Şirketin resmi internet sitesinde belirtilen iletişim kanallarından herhangi biri ile Şirketimize yöneltebilir.</p>
+                                        <h5 style="color: red;">5. Açık Rıza</h5>
+                                        <p>* Güncel ve geçmiş sağlık verilerim başta olmak üzere özel nitelikli kişisel verilerim ile kişisel verilerimin Demir Sağlık ve Hayat Sigorta A.Ş. tarafından işlenmesine, yukarıda açıklanan koşullarda kamu veya özel tüm sağlık hizmeti sunucularından elde edilmesine bu bilgi ve belgelerin Şirketiniz veri kayıt sistemlerine kaydedilmesine ve bu sistemlerde sınıflandırılarak mevzuatın öngördüğü süre boyunca saklanmasına ve depo edilmesine, işbu Bilgilendirme ve Açık Rıza metninde belirtilen kişi, kurum ve kuruluşlara aktarılmasına, mevzuattan kaynaklanan yükümlülüklere istinaden Hazine ve Maliye Bakanlığı , SBGM, MASAK başta olmak üzere her türlü düzenleyici ve denetleyici kamu / özel kurum ve kuruluşları ile yargı mercilerine açıklanmasına ve aktarılmasına</p>
+                                        <p>Açıkça rıza veriyorum.</p>
+
+                                    </div>
+                                    <div class="modal-footer">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-30">
+                            @*<input type="checkbox" style="vertical-align: middle; margin: 0px;" class="checkbox-inline" required>*@
+                            @Html.CheckBoxFor(x => x.db.ony1, new { @style = "vertical-align: middle; margin: 0px;", @class = "checkbox-inline" })
+                            <span class="checkmark" id="hata_ony1"></span>
+
+                            <label style="font-size: 10px ;" class="col-form-label"><a href="~/insre/policies/bilgilendrmemetni.pdf" target="_blank" style="color:#24d366; font-weight:900;">Bilgilendirme Metni</a>, <a href="~/insre/policies/ozlsartlar.pdf" target="_blank" style="color:#24d366; font-weight:900;"> Poliçe Özel Şartları</a> ve <a href="~/insre/policies/genelsartlar.pdf" target="_blank" style="color:#24d366; font-weight:900;">Genel Şartlarını</a> okudum , anladım. Vermiş olduğum bilgilerin doğru olduğunu beyan ve kabul ederek, Bilgilendirme Metnini onaylıyorum ve poliçe özel şartlarını kabul ediyorum.</label>
+
+                        </div>
+                        <div class="col-md-30">
+                            @Html.CheckBoxFor(x => x.db.ony2, new { @style = "vertical-align: middle; margin: 0px;", @class = "checkbox-inline" })
+                            <span class="checkmark" id="hata_ony2"></span>
+
+                            <label style="font-size: 10px ;"  ><a href="~/insre/policies/gizlilik_politikası.pdf" target="_blank" style="color:#24d366; font-weight:900;" >Gizlilik Politikası</a> ve <a href="~/insre/policies/mesafeli_satıs_sozlesmesi.pdf" style="color:#24d366; font-weight:900;" target="_blank">Mesafeli Satış Sözleşmesini </a> okudum, anladım. Vermiş olduğum bilgilerin doğru olduğunu beyan ve kabul ederek, Bilgilendirme Metnini onaylıyorum ve poliçe özel şartlarını kabul ediyorum.</label>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </fieldset>
+        </div>
+
+    </fieldset>
+    <div class="col-12 text-center mt-2 mb-3">
+        <button type="submit" class="btn btn-info" onclick="ValidateForm(); fcc(1);">Ödeme Adımına İlerle </button>
+    </div>
+
+}
+

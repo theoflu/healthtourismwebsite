@@ -1,0 +1,258 @@
+﻿﻿@using website.Models.sınıflar;
+@model List<kmplksyn_plan>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TasarmLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="utf-8">
+
+<body>
+
+    <!-- Page Header-->
+    <section class="breadcrumbs-custom">
+        <div class="breadcrumbs-custom-main context-dark">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-9">
+                        <h2 class="breadcrumbs-custom-title">Planlar</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumbs-custom-aside">
+            <div class="container">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/Anasayfa/Index">Ana Sayfa</a></li>
+                    <li class="active">Planlar</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Base typography-->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 flex-lg-row-">
+                @foreach (var x in Model)
+                {<div class="col-md-10 col-lg-5 text-center">
+
+
+                        <img src="@x.FotoUrl" alt="" width="279" height="570" />
+
+                    </div>
+
+                    <div class="col-lg-9 col-xl-8">
+                        <h4>@x.Baslik</h4>
+                        @Html.Raw(@x.Acklma)
+
+                    </div>
+
+                    <div class="col-lg-3 col-xl-4">
+                        <div class="row row-35 row-lg-50">
+                            <div class="col-sm-6 col-lg-12">
+
+                                <article class="box-bordered  text-center">
+                                    <h5>@x.Baslik Ödeme Detayı</h5>
+                                    <!-- <h2 class="font-weight-bold">Muli</h2> -->
+                                    <!-- <h4>Open Sans</h4> -->
+
+                                </article>
+                            </div>
+                            <!--buraya gelcek-->
+                            <div class="col-sm-6 col-lg-12">
+                                <article class="box-bordered text-center">
+                                    <label class="button button-sm button-primary button-shadow button-winona wow clipInLeft " style=" width: 230px; height: 30px; align-self:center; " data-bs-toggle="modal" data-bs-target="#modal-@x.ID" data-wow-delay=".2s">Detay</label>
+
+                                    <div class="modal fade" id="modal-@x.ID">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">@x.Baslik </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablePrim2li" style="width:100%;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-bottom border-top border-right pr-2 py-1">
+                                                                    Yatarak Tedavi  Teminatı
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="border-bottom border-top pl-3 py-1">
+                                                                    <span style="color:green; font-weight:700;">@x.plan_price.ytrk_tdv_tmnt EUR</span>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-bottom border-right pr-2 py-1">
+                                                                    Konaklama Teminatı
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="border-bottom pl-3 py-1">
+                                                                    <span style="color:green; font-weight:700;">@x.plan_price.knklm_tmnt EUR</span>
+                                                                    <div style="position: relative; display: table; height: 1px; width: 100%; padding: 0px; margin: 0px; background-size: cover;"></div>
+                                                                    <small style="font-size:8px;">100 EUR Muafiyetli</small>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-bottom border-right pr-2 py-1">
+                                                                    Ulaşım  Teminatı
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="border-bottom pl-3 py-1">
+                                                                    <span style="color:green; font-weight:700;">@x.plan_price.ulasm_tmnt EUR</span>
+                                                                    <div style="position: relative; display: table; height: 1px; width: 100%; padding: 0px; margin: 0px; background-size: cover;"></div>
+                                                                    <small style="font-size:8px;">100 EUR Muafiyetli</small>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 pt-1 pb-0">
+                                                                    Seyahat Teminatı
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 pt-1 pb-0">
+                                                                    <span style="color:green; font-weight:700;">@x.plan_price.syht_tmnt EUR</span>
+                                                                </td>
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:top; white-space:nowrap; font-weight:700;" valign="top" class="border-bottom border-right pr-2 py-0">
+                                                                    &nbsp;
+
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:top; white-space:nowrap; line-height:1.0;" valign="top" class="border-bottom pl-0 pt-0 pb-0">
+                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablePrim2li my-0" style="width:100%; color:#888; font-size:11px; white-space:nowrap;">
+                                                                        <tbody>
+                                                                            <tr><td class="border-right border-bottom text-left pr-1 pl-2 pt-1"><strong style="font-size:10px;">Hastalık</strong></td><td class="text-right border-bottom pl-1 pt-1">@x.plan_price.hstlk EUR</td></tr>
+                                                                            <tr><td class="border-right border-bottom text-left pr-1 pl-2"><strong style="font-size:10px;">Kaza</strong></td><td class="text-right border-bottom pl-1">@x.plan_price.kaza EUR</td></tr>
+                                                                            <tr><td class="border-right border-bottom text-left pr-1 pl-2"><strong style="font-size:10px;">Cenazenin <br>Yurda Nakli</strong></td><td class="text-right border-bottom pl-1">@x.plan_price.cndzn_yrdn_nkl EUR</td></tr>
+                                                                            <tr><td class="border-right border-bottom text-left pr-1 pl-2"><strong style="font-size:10px;">Acil Tıbbi Nakil</strong></td><td class="text-right border-bottom pl-1">@x.plan_price.acil_tbb_nkl EUR</td></tr>
+                                                                            <tr><td class="border-right text-left pr-1 pl-2 pb-1"><strong style="font-size:10px;">Tıbbi Danışmanlık</strong></td><td class="text-right pl-1 pb-1">Limitsiz</td></tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+
+                                                            @if (x.plan_price.rfktc_ulsm_tmnt != null)
+                                                            {
+                                                                <tr>
+                                                                    <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 py-1">
+                                                                        Refakatçi Konaklama <br />Teminatı
+                                                                    </td>
+                                                                    <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 py-1">
+                                                                        <span style="color:green; font-weight:700;">@x.plan_price.rfktc_knklm_tmnt EUR</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 py-1">
+                                                                        Refakatçi Ulaşım <br />Teminatı
+                                                                    </td>
+                                                                    <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 py-1">
+                                                                        <span style="color:green; font-weight:700;">@x.plan_price.rfktc_ulsm_tmnt EUR</span>
+                                                                    </td>
+                                                                </tr>
+                                                            }
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 py-1">
+                                                                    Kendi Ülkesinde <br />  Müdahale Teminatı <br />(KÜM)
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 py-1">
+                                                                    <span style="color:green; font-weight:700;">@x.plan_price.knd_ulksnd_mdhl_tmnt EUR</span>
+                                                                </td>
+                                                            </tr>
+
+
+
+
+
+
+
+
+                                                        </tbody>
+                                                    </table>
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <table width="120%" border="0" cellspacing="0" cellpadding="0" class="tablePrim2li" style="width:100%;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 py-1">
+                                                                    <label class="text-left" style="color:black; font-weight:700;"> KÜM Dahil Prim  </label>
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 py-1"><span style="color:green; font-weight:700;">@x.plan_price.kum_dhl_prim EUR</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 py-1">
+                                                                    <label class="text-left" style="color:black; font-weight:700;"> KÜM Dahil Değil Prim </label>
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 py-1"><span style="color:green; font-weight:700;">@x.plan_price.kumsz_prim EUR</span></td>
+                                                            </tr>
+                                                            @if (x.plan_price.rfktc_ulsm_tmnt != null)
+                                                            {
+
+
+                                                                <tr>
+                                                                    <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 py-1"> <label class="text-left" style="color:black; font-weight:700;">Refaketçi Dahil  Prim  </label></td>
+                                                                    <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 py-1"><span class="text-right" style="color:green; font-weight:700;">@x.plan_price.rfktc_dhl EUR</span></td>
+                                                                </tr>
+
+                                                            }
+                                                            @if (x.plan_price.rfktc_ulsm_tmnt != null)
+                                                            {
+                                                                <tr>
+                                                                    <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 py-1">
+                                                                        <label class="text-left" style="color:black; font-weight:700;"> KÜM ve Refaketçi Dahil Prim   </label>
+                                                                    </td>
+                                                                    <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 py-1"><span class="text-right" style="color:green; font-weight:700;">@x.plan_price.kum_rfktc_dhl EUR</span></td>
+
+                                                                </tr>
+
+                                                            }
+
+
+                                                        </tbody>
+                                                    </table>
+
+                                                    <a class="button button-sm button-primary button-shadow button-winona " href="/Buy/Index" style=" width: 150px; height: 10px; "><span style="color:white">Satın Al</span></a>
+
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                }
+            </div>
+
+            <script>
+                $(() => {
+                    $('.modal-toggle').click(function () {
+                        $('#mymodal').text($(this).attr('data-name'));
+                    });
+                });
+            </script>
+        </div>
+        <!-- HTML Text Elements-->
+        <div class="container">
+
+        </div>
+        <!-- Ordered & unOrdered List-->
+        <!-- Blockquote-->
+
+    </section>
+    <!-- Page Footer-->
+
+</body>
+</html>
+
+

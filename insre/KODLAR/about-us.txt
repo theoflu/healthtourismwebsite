@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="utf-8">
+  <head>
+    <title>Hakkımızda</title>
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CMuli:100,300,400,600,800">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader" id="loading">
+      <div class="preloader-body">
+        <div id="loading-center-object">
+          <div class="object" id="object_four"></div>
+          <div class="object" id="object_three"></div>
+          <div class="object" id="object_two"></div>
+          <div class="object" id="object_one"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="10px" data-xl-stick-up-offset="10px" data-xxl-stick-up-offset="10px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="images/logo-default-297x63.jpeg" alt="" width="148" height="31"/></a>
+                </div>
+              </div>
+              <div class="rd-navbar-nav-wrap">
+                <!-- RD Navbar Nav-->
+                <ul class="rd-navbar-nav">
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Ana Sayfa</a>
+                  </li>
+
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="plans.html">Planlar</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">İletişime Geç</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="rd-navbar-element"><a class="button button-sm button-header button-winona" href="#">Giriş Yap</a>
+              </div>
+              <div class="rd-navbar-dummy"></div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section class="breadcrumbs-custom">
+        <div class="breadcrumbs-custom-main context-dark">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-xl-9">
+                <h3 class="breadcrumbs-custom-title">Bizim Hakkımızda Birkaç Söz</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="breadcrumbs-custom-aside">
+          <div class="container">
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="index.html">Ana Sayfa</a></li>
+              <li class="active">Hakkımızda</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Who we Are-->
+      <section class="section">
+        <div class="container">
+          <div class="row align-items-end justify-content-center">
+            <div class="col-md-10 col-lg-7">
+              <div class="section-md">
+                <h3>Sağlık turizmi ekosistemi </h3>
+                <p class="text-gray-900">
+                  Sağlık Turizmi aracı hizmetlerinde Dünyada başka bir örneği olmayan yepyeni bir ekosistem başlıyor. 
+                  Sürekli öğrenerek kendini geliştiren yapay zeka ile hazırlanan bu ekosistem bilinen tüm yöntemleri geride bırakarak tüm bileşenleri bünyesinde topluyor.
+                </p>
+                <p class="text-gray-900">
+                  Healthassis ekosisteminin 6 modülünden sadece bir tanesi olan Complication Incure sistemini kullanan tüm bileşenlere 
+                  hazırlanan yapay zeka ekosistemde yer almaları için ön kayıt başvuruları başladı.   
+                </p>
+                <!-- Quote Light-->
+                <blockquote class="quote-light quote-light_1 wow fadeInRightSmall ">
+                  <div class="quote-light-mark linearicons-quote-open"></div>
+                  <div class="quote-light-text">
+                  
+                <label class="col-form-label" data-bs-toggle="modal" data-bs-target="#myModal2" id="nedenbz" style="font-weight: 700;">Neden Healthasis ekosistemi?</label>              
+                <div class="modal fade" id="myModal2">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Neden Healthasis ekosistemi; </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body modal-xl">
+                        <form>
+                          <p id="ndn">•	Dünya üzerinde sağlık sebepleri ile seyahat etmeyi planlayan her sağlık turistinin mutlaka ziyaret etmeyi isteyeceği bir platform olması,</p>
+                          <p id="ndn">•	Seyahatini planlarken kişisel beklentileri ile birebir örtüşen en ucuz doktor, hastane, uçak bileti, otel, transfer, sigorta, tercüman, refakat ve diğer beklenti ve ihtiyaçlarını karşılayacak assistans hizmetlerinin olması,</p>
+                          <p id="ndn">•	Hastanın; Yapay Zekanın kişiye özel hazırlayacağı algoritma ile bütün bu parametrelerin fiyatlarını ve aralarındaki farkların kıyaslamasını yaparak kendisine en uygun tercihleri bir bakışta tek bir ekranda görebiliyor olması,</p>
+                          <p id="ndn">•	Dakikalar içinde yüzlerce hastane, binlerce doktordan net fiyatları ve şartları öğrenerek tek bir ekrandan kıyaslama yapıp, arama sürecini birkaç dakikaya indirmesi ve kendisine uygun seçeneklere erişim sağlaması,</p>
+                          <p id="ndn">•	Sürekli tarama yaparak ihtiyaç duyulan operasyon için en kaliteli ve başarı oranı en yüksek aynı zamanda ucuz fiyatları bulabiliyor olması, </p>
+                          <p id="ndn">•	Binlerce doktordan ve sağlık kuruluşundan fiyatları online olarak sorgulayabiliyor olması.</p>
+                          <p id="ndn">•	Hastanın; yüzlerce hastane, binlerce doktor arasından internette saatlerce hatta günlerce inceleme yapma sorunu yaşamayacak olması,</p>
+                          <p id="ndn">•	Hastanın, arama motorlarının sunduğu onlarca aracı ve hastane ile ayrı ayrı görüşme ve yazışma yaparak zaman kaybetmeyecek olması, </p>
+                          <p id="ndn">•	Uygun seçeneklerden güvenli bilgi almak için uzun bekleme sürelerine maruz kalmayacak olması,</p>
+                          <p id="ndn">•	Görüşme yaptığı yerlerin, sonrasında satış baskısı yapmasının önüne geçerek kafasının karışmasının engellenecek olması, </p>
+                          <p id="ndn">•	Kontak kurulan yerlere ayrı ayrı kişisel bilgilerini paylaşması sonucu kişisel verilerinin 3. Kişilere aktarılıp gereksiz reklamlara, aramalara, e-postalara maruz kalmayarak, bilgileri tek bir noktada güvenle saklanacak ve istediğinde istediği kadarının karşı tarafa belirli protokoller çerçevesinde paylaşılacak olması ve bu sayede kişisel verilerinin güvence altında olacak olması,</p>
+                          <p id="ndn">•	Satın almaları tek bir noktan gerçekleştirerek. Koşulsuz iptal şartlarından faydalanıyor olması. </p>
+                          <p id="ndn">•	7/24 online destek alabilecek ve aklına gelen soruları hemen sorarak karar verme sürecini hızlı ve sağlıklı yapabilecek olması.</p>
+                          <p id="ndn">•	Sistemin; doktor, klinik, hastane veya diğer hizmet sağlayıcılarının tanıtımı için bir ücret talep etmiyor olması. Bu sayede tamamen tarafsız olarak doğru bilgilerin hastaya aktarılabilecek olması.</p>
+                          <p id="ndn">•	Olası operasyon sonrası komplikasyonlarında güvence altına alınması, bu güvenceyi alırken yine kişiye özel sigorta kapsamından faydalanarak sigortalara gereksiz ücret ödemek zorunda kalmaması, tam ihtiyaç tespiti yapılmış olacağı için sadece ihtiyacı olan sigorta ürünlerine ödeme yapacak olması,</p>
+                          <p id="ndn">•	Sağlık turizmi kapsamında akreditasyonu olan sağlık kuruluşları içinden en doğru ve uygun doktoru hastanın beklentisine göre seçmesi, söz konusu doktorlara talebi aynı anda ileten yapay zeka; doktorlardan gelen anlık cevapları kendi içinde süzerek hastaya seçim yapmasını kolaylaştıran bir deneyim yaratması,</p> 
+                          <p id="ndn">•	Sistemin, belirli bir lokasyon dahilinde hiçbir doktor veya sağlık gurubu ile özel anlaşma yapmayarak, işleyişte yer alan tüm kurumlara ve kişilere eşit mesafede durması, sadece hasta beklentisi doğrultusunda destinasyon ve doktor seçimi yapıyor olması,</p> 
+                          <p id="ndn">•	Doktor, klinik ve hastanelerin hem organizasyonlarını kolaylıkla yapıp takip edebilecekleri bir altyapıya sahip olmaları. Böylece verimlilik, karlılık, başarı oranı gibi hesaplamaları kolaylıkla yapabilecek olmaları,</p>
+                          <p id="ndn">•	Müşteri yönetim sistemi için ayrıca yatırım yapmasına gerek kalmayacak olması,</p>
+                          <p id="ndn">•	Yaygın olarak kullanılan İngilizce, Almanca gibi dillerde bile yetişmiş nitelikli personel bulmakta zorlanan doktor, klinik ve hastanelerin yerel dil konuşulan hedef ülkelere açılmakta karşılaştıkları zorlukların giderilecek olması, </p>
+                          <p id="ndn">•	Paydaşların operasyon ve iş gücü masraflarının ciddi oranda düşecek olması,</p>
+                          <p id="ndn">•	Sektör paydaşlarının güvenli bir platformdan müşterilerine hizmet verecek olması. Bu sayede satış yapabilme ihtimallerinin artacak olmasıdır.</p>
+                          <hr>
+                          <p style="font-weight: 900; color: black;">Healthassis ekosistemine kayıtlarda Complication Incure   kullanıcılarına öncelik verilecektir. </p>                        
+                      
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <a class="button button-lg button-primary button-shadow button-winona" style=" height: 20px;" href="buy-page.html" wow-delay=".2s">Ön Sipariş Ver</a>
+
+                      </div>
+                    </div> 
+                  </div>
+                  </div> 
+                   
+                  </div>
+                </blockquote>
+
+              </div>
+            </div>
+            <div class="col-md-10 col-lg-5 text-center"><img src="images/about-1-379x570.jpg" alt="" width="379" height="570"/>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About-->
+      <section class="section section-md bg-gray-100">
+        <div class="container">
+          
+        </div>
+      </section>
+      <!-- Welcome to Team-->
+       <section class="section section-md bg-gray-100">
+      
+         
+      </div>
+    </section>
+      <!-- People Ready to Change the World-->
+    
+      <!-- Page Footer-->
+      <footer class="section footer-classic">
+        <div class="footer-classic-main">
+          <div class="container">
+            <div class="row row-50 justify-content-lg-between">
+              <div class="col-sm-7 col-lg-3 col-xl-2"><a class="brand" href="index.html"><img src="images/logo-default-297x63.jpeg" alt="" width="148" height="31"/></a>
+                <p><span style="max-width: 250px;">2022'den beri, Tüm Dünyaya Hizmet ediyoruz.</span></p><a class="button button-sm button-default-outline button-winona" href="#">Giriş Yap</a>
+              </div>
+              <div class="col-sm-5 col-lg-3 col-xl-2">
+                <h4 class="footer-classic-title">Biz Kimiz?</h4>
+                <ul class="list footer-classic-list">
+                  <li><a href="about-us.html">Hakkımızda</a></li>
+                  <li><a href="#">Planlar</a></li>
+                 
+                </ul>
+              </div>
+              <div class="col-sm-7 col-lg-5 col-xl-3">
+                <h4 class="footer-classic-title">Hızlı Linkler</h4>
+                <ul class="list footer-classic-list footer-classic-list_2-cols">
+                  <li><a href="#">Kayıt Ol</a></li>
+                  <li><a href="#">Haberler</a></li>
+                  <li><a href="#">Çalıştığımız Firmalar</a></li>
+                  <li><a href="#">Planlar</a></li>
+                  <li><a href="contact-us.html">İletişim</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-5 col-lg-9 col-xl-2">
+                <h4 class="footer-classic-title">İletişime Geç</h4>
+                <div class="row row-20 row-sm-35">
+                  <div class="col-6 col-sm-12 col-lg-8 col-xl-12">
+                    <div class="row row-10 text-default">
+                      <div class="col-lg-6 col-xl-12"><a href="mailto:#">info@demolink.org</a></div>
+                      <div class="col-lg-6 col-xl-12"><a class="big" href="tel:#">+1-853-234-65</a></div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-12 col-lg-4 col-xl-12 text-right text-sm-left">
+                    <div class="group group-xs"><a class="link link-social-1 mdi mdi-twitter" href="#"></a><a class="link link-social-1 mdi mdi-facebook" href="#"></a><a class="link link-social-1 mdi mdi-instagram" href="#"></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-classic-aside">
+          <div class="container">
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Firma Adı</span>. All Rights Reserved. Design by ME</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+
+    
+  </body>
+</html>

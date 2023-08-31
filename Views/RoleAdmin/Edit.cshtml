@@ -1,0 +1,104 @@
+﻿@model website.Models.RoleEditModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <input type="hidden" name="roleName" value="@Model.Role.Name" />
+    <input type="hidden" name="RoleId" value="@Model.Role.Id" />
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">@Model.Role.Name rolüne eklenecek veya çıkarılacak kullanıcılar</h3>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <table  id="example2" class=" table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>   Add to @Model.Role.Name</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Nonmembers.Count() == 0)
+                {
+                    <tr><td colspan="2"> Bu role eklenebilecek kullanıcı yok</td></tr>
+                }
+                else
+                {
+                    <tr >
+
+                        <td >
+                            Pasaport Numarası
+                        </td>
+                        <td>Rol Ekle</td>
+                    </tr>
+                    foreach (var user in Model.Nonmembers)
+                    {
+                        <tr id="tr">
+                            <td> @user.UserName</td>
+                            <td><input type="checkbox" name="IdstoAdd" value="@user.Id" /></td>
+                        </tr>
+                    }
+                }
+
+
+            </tbody>
+
+        </table>
+    </div>
+    <div class="card-body">
+        <table  id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>   Add to @Model.Role.Name</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Members.Count() == 0)
+                {
+                    <tr><td colspan="2"> Bu role Eklenmiş  kullanıcı yok</td></tr>
+                }
+                else
+                {
+                    <tr >
+                        <td>
+                            Pasaport Numarası
+                        </td>
+                        <td>Rol Çıkar</td>
+                    </tr>
+                    foreach (var user in Model.Members)
+                    {
+                        <tr id="tr">
+                            <td> @user.UserName</td>
+                            <td><input type="checkbox" name="IdstoDelete" value="@user.Id" /></td>
+                        </tr>
+                    }
+                }
+
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="card-body">
+        <table id="" class="table table-bordered table-hover">
+
+            <tbody>
+
+
+                <tr><td align="center"> <button type="submit" class="btn btn-primary form-control">Kaydet </button></td></tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+
+}

@@ -1,0 +1,98 @@
+﻿@using website.Models.sınıflar;
+@model List<iletisim>
+
+    @{
+        ViewBag.Title = "Mail";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <div class="card">
+        <div class="card-header">
+
+            <h3 class="card-title">
+              Gelen Mailler
+
+            </h3>
+
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Ad-Soyad</th>                     
+                        <th>E-posta</th>
+                        <th>Telefon</th>
+                        <th>Mesaj</th>
+                        <th>Mail Tarihi</th>                     
+                        <th>Okundu Bilgisi</th>                     
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model)
+                    {
+                        <tr id="tr">
+                            <td> @x.AdSoyad</td>
+                            <td> @x.mail</td>
+                            <td> @x.phone</td>
+                          
+                          
+                            <td >
+                                <label class="btn btn-primary" style=" align-self:center; " href=""  data-bs-toggle="modal" data-bs-target="#modal-@x.ID" >Detay</label>
+
+                                <div class="modal fade" id="modal-@x.ID">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Kullanıcı Adı : @x.AdSoyad  | Mesaj Tarihi : @x.mTarih.ToShortDateString()</h5>
+                                                <button type="button" class="btn btn-close" data-bs-dismiss="modal">x</button>
+                                            </div>
+                                            <div class="modal-body">
+                                             
+                                                <p>@x.mesaj</p>
+
+
+                                            </div>
+                                            <div class="modal-footer">
+
+                                                <table width="100%" border="0" cellspacing="0" cellpadding="0"  class="table table-borderless table-hover" style="width:100%; color:#888; font-size:11px; white-space:nowrap;" >
+                                                    <tbody>
+                                                        <tr><td class="border-right border-bottom text-left pr-1 pl-2 pt-1"><strong style="font-size:10px;">Telefon Numarası</strong></td><td class="text-right border-bottom pl-1 pt-1"><a class="big" href="tel:@x.phone">@x.phone</a></td></tr>
+                                                        <tr><td class="border-right border-bottom text-left pr-1 pl-2"><strong style="font-size:10px;">E-posta</strong></td><td class="text-right border-bottom pl-1"><a class="big" href="mailto:@x.mail">@x.mail</a></td></tr>
+                                                       
+                                                    </tbody>
+                                                </table>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td> @x.mTarih</td>
+                            <td>
+                                @if (x.okndu == false)
+                                {
+                                    <a class="btn btn-danger" href="/Admin/okundu/@x.ID" style="color: white; align-self: center; ">Okundu İşaretle</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-warning" href="/Admin/okunmadı/@x.ID" style=" color: white; align-self: center; ">Okunmadı İşaretle</a>
+                                }
+                            </td>
+                         
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+
+
+

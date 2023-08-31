@@ -1,0 +1,330 @@
+﻿﻿@model website.Models.sınıflar.sigorta_edilen
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TasarmLayout.cshtml";
+}
+<!DOCTYPE html>
+
+<html class="wide wow-animation" lang="utf-8">
+
+<body onload="fcc(1); ">
+
+    <section class="breadcrumbs-custom">
+        <div class="breadcrumbs-custom-main context-dark">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-9">
+                        <h2 class="breadcrumbs-custom-title">Satın Al</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumbs-custom-aside">
+            <div class="container">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/Anasayfa/Index">Ana Sayfa</a></li>
+                    <li class="active">Satın Al</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section section-md">
+        <div class="container">
+            <div class="row ">
+                <div class="-md-16 mx-auto my-auto bg-gray-3 rounded 2 shadow">
+
+
+
+                    @Html.Action("Satn_Al", "Buy")
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script>
+
+
+        var al;
+
+        function fcc(sid) {
+            var premiumHtml = '';
+            var planid = '';
+
+            p = sid;
+            al = sid;
+            $.ajax({
+                url: '/Buy/Fyt',
+                data: { p: sid },
+                type: "get",
+                dataType: "json",
+                async: true,
+
+                success: function (data) {
+                    if (!data.IsSuccess) {
+                        var w = jQuery.parseJSON(data);
+                        premiumHtml = 'Seçili Plan : <span style="font-weight:700;"> ' + w[0].Plan + ' </span> <span> Prim : <span style="color:green; font-weight:700;">' + w[0].Text + ' ' + w[0].Value + '</span>';
+                        planid = sid;
+                        if (sid == 4 || sid == 5) {
+
+                            $("#rf").removeClass("gizli");
+                            $("#km_rf").removeClass("gizli");
+                        }
+                        else {
+                            $("#rf").addClass("gizli");
+                            $("#km_rf").addClass("gizli");
+                        }
+                        $(".planPrice").html(premiumHtml);
+                        $(".planID").val(w[0].Plan);
+                        $(".cost").val(w[0].Text);
+                        $(".ozlbtnn").removeClass("customBtnctive");
+                        $(".ozlbtnnn").removeClass("customBtnctive");
+                        $(".ozlbtn").removeClass("customBtnctive");
+                        //if ($('#m-' + sid).onclick) {
+                        //    $('#m-' + sid).addClass('secili');
+                        //}
+                        //$('#m-' + sid).removeClass('secili');
+                      
+                       
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                }
+
+            });
+        };
+
+
+       
+
+        //<button type="button" id="btngetbyid">tıkla</button>
+        //  <input type="text" id="wid" />
+        $(function () {
+            $('#btn_Plan').click(function () {
+
+                var prim = $('#planPrice').val();
+                p = al
+                $.ajax({
+                    url: '/Buy/Get_kum',
+                    data: { p: al },
+                    type: "get",
+                    dataType: "Json",
+                    success: function (data) {
+                        var w = jQuery.parseJSON(data);
+                        premiumHtml = 'Seçili Plan : <span style="font-weight:700;"> ' + w[0].Plan + ' + Kendi Ülkesinde Müdahele  </span> <span> Prim :  <span style="color:green; font-weight:700;">' + w[0].Text + ' ' + w[0].Value + '</span>';
+
+                        $(".ozlbtnn").removeClass("customBtnctive");
+                        $(".ozlbtnnn").removeClass("customBtnctive");
+                        $("#btn_Plan").addClass("customBtnctive");
+
+                        $(".cost").val(w[0].Text);
+                        $("#btn_Plan2").addClass("gizli");
+
+                        $(".planPrice").html(premiumHtml);
+                        $(".ektmntID").val("Kendi Ülkesinde Müdahle");
+
+                    }
+                });
+            });
+        });
+        $(function () {
+
+            $('#btn_Plan1').click(function () {
+
+                var prim = $('#planPrice').val();
+                p = al
+                $.ajax({
+                    url: '/Buy/Get_rfkt_km',
+                    data: { p: al },
+                    type: "get",
+                    dataType: "Json",
+                    success: function (data) {
+                        var w = jQuery.parseJSON(data);
+                        premiumHtml = 'Seçili Plan : <span style="font-weight:700;"> ' + w[0].Plan + ' + Kendi Ülkesinde Müdahele + Refaketçi Dahil</span> <span> Prim : <span style="color:green; font-weight:700;">' + w[0].Text + ' ' + w[0].Value + '</span>';
+                        $(".planPrice").html(premiumHtml);
+                        $(".ozlbtn").removeClass("customBtnctive");
+                        $(".ozlbtnnn").removeClass("customBtnctive");
+                        $(".cost").val(w[0].Text);
+
+                        $("#btn_Plan1").addClass("customBtnctive");
+                        $(".ektmntID").val("Kendi Ülkesinde Müdahele + Refaketçi Dahil");
+
+                    }
+                });
+            });
+        });
+
+        $(function () {
+
+            $('#btn_Plan2').click(function () {
+
+                var prim = $('#planPrice').val();
+                p = al
+                $.ajax({
+                    url: '/Buy/Get_rfkt',
+                    data: { p: al },
+                    type: "get",
+                    dataType: "Json",
+                    success: function (data) {
+                        var w = jQuery.parseJSON(data);
+                        premiumHtml = 'Seçili Plan : <span style="font-weight:700;"> ' + w[0].Plan + ' + Refaketçi Dahil </span> Prim : <span style="color:green; font-weight:700;">' + w[0].Text + ' ' + w[0].Value + '</span>';
+                        $(".planPrice").html(premiumHtml);
+                        $(".ozlbtnn").removeClass("customBtnctive");
+                        $(".ozlbtn").removeClass("customBtnctive");
+                        $(".cost").val(w[0].Text);
+
+                        $("#btn_Plan2").addClass("customBtnctive");
+                        $(".ektmntID").val("Refaketçi Dahil");
+
+                    }
+                });
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    <!-- Get in Touch-->
+    <!-- Page Footer-->
+    @*<script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                'use strict'
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.querySelectorAll('.needs-validation')
+
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
+            })()
+        </script>*@
+
+
+
+
+
+    <script>
+        "use strict";
+        var Ad = document.getElementById("db_Ad");
+        var Soyad = document.getElementById("db_Soyad");
+        var Babaadi = document.getElementById("db_BabaAdi");
+        var sAd = document.getElementById("db_sigorta_Ettiren_brysel_sgettren_Ad");
+        var sSoyad = document.getElementById("db_sigorta_Ettiren_brysel_sgettren_Soyad");
+        var sBabaadi = document.getElementById("db_sigorta_Ettiren_brysel_sgettren_BabaAdi");
+        var psp = document.getElementById("db_PasaportNo");
+        var spsp = document.getElementById("db_sigorta_Ettiren_brysel_sgettren_PasaportNo");
+        var karakterSiniri = 20;
+
+        Ad.onkeyup = karakterKontrol;
+        Ad.onkeydown = karakterKontrol;
+        Soyad.onkeyup = karakterKontrol;
+        Soyad.onkeydown = karakterKontrol;
+        Babaadi.onkeyup = karakterKontrol;
+        Babaadi.onkeydown = karakterKontrol;
+        sAd.onkeyup = karakterKontrol;
+        sAd.onkeydown = karakterKontrol;
+        sSoyad.onkeyup = karakterKontrol;
+        sSoyad.onkeydown = karakterKontrol;
+        sBabaadi.onkeyup = karakterKontrol;
+        psp.onkeyup = karakterKontrol;
+        spsp.onkeyup = karakterKontrol;
+        spsp.onkeydown = karakterKontrol;
+        psp.onkeydown = karakterKontrol;
+        sBabaadi.onkeydown = karakterKontrol;
+
+        function karakterKontrol() {
+            var mesajUzunluk = this.value.length;
+
+            if (karakterSiniri >= mesajUzunluk) {
+                var kalan = karakterSiniri - mesajUzunluk;
+
+            } else {
+                this.value = this.value.substr(0, karakterSiniri);
+            }
+        }
+    </script>
+    <script>
+        "use strict";
+        var Tlfn = document.getElementById("db_Tlfn");
+        var sTlfn = document.getElementById("db_sigorta_Ettiren_brysel_sgettren_Tlfn");
+        var vNo = document.getElementById("db_sigorta_ettiren_tuzel_VergiNo");
+        var vTlfn = document.getElementById("db_sigorta_ettiren_tuzel_VTlfn");
+
+        var karakterSinir = 10;
+
+        Tlfn.onkeyup = karakterKontrol;
+        Tlfn.onkeydown = karakterKontrol;
+        sTlfn.onkeyup = karakterKontrol;
+        sTlfn.onkeydown = karakterKontrol;
+        vNo.onkeyup = karakterKontrol;
+        vNo.onkeydown = karakterKontrol;
+        vTlfn.onkeyup = karakterKontrol;
+        vTlfn.onkeydown = karakterKontrol;
+
+
+        function karakterKontrol() {
+            var mesajUzunluk = this.value.length;
+
+            if (karakterSinir >= mesajUzunluk) {
+                var kalan = karakterSiniri - mesajUzunluk;
+
+            } else {
+                this.value = this.value.substr(0, karakterSinir);
+            }
+        }
+    </script>
+    <script>
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+        function isLttrKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return true;
+            return false;
+        }
+    </script>
+
+
+</body>
+</html>
+
+

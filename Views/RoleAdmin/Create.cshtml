@@ -1,0 +1,42 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Oluşturulmuş Roller</h3>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <table id="" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Rol Adı</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td><input name="name" value="@Model" class="form-control" /></td>
+                </tr>
+
+                <tr><td align="right">   <button type="submit" class="btn btn-primary">Rol Oluştur </button></td></tr>
+            </tbody>
+
+        </table>
+    </div>
+
+ 
+    <br />
+
+
+
+}

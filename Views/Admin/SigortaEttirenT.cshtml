@@ -1,0 +1,43 @@
+﻿
+@using website.Models.sınıflar
+@model List<sigorta_ettiren_tuzel>
+
+@{
+    ViewBag.Title = "SigortaEttirenT";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Detay</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+
+        -
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Vergi Numarası </th>
+                    <th>Telefon</th>
+                    <th>E-posta</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var x in Model)
+                {
+                    <tr id="tr">
+                        <td>  @x.VergiNo </td>
+                        <td>@x.VTlfn</td>
+                        <td> @x.VEposta</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+        -
+    </div>
+    <!-- /.card-body -->
+</div>
+

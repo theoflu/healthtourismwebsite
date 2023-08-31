@@ -1,0 +1,221 @@
+﻿
+@{
+    ViewBag.Title = "Plans";
+    Layout = "~/Views/Shared/_TasarmLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="utf-8">
+
+<body>
+    
+        <!-- Page Header-->
+        <section class="breadcrumbs-custom">
+            <div class="breadcrumbs-custom-main context-dark">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-9">
+                            <h2 class="breadcrumbs-custom-title">Planlar</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumbs-custom-aside">
+                <div class="container">
+                    <ul class="breadcrumbs-custom-path">
+                        <li><a href="/Tasarm/Index">Ana Sayfa</a></li>
+                        <li class="active">Planlar</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Base typography-->
+        <section class="section section-lg">
+            <div class="container">
+                <div class="row row-50 flex-lg-row-reverse">
+                    <div class="col-lg-3 col-xl-4">
+                        <div class="row row-35 row-lg-50">
+                            <div class="col-sm-6 col-lg-12">
+                                <article class="box-bordered">
+                                    <h5>Sıkça Sorulan Sorular</h5>
+                                    <!-- <h2 class="font-weight-bold">Muli</h2> -->
+                                    <!-- <h4>Open Sans</h4> -->
+                                </article>
+                            </div>
+                            <div class="col-sm-6 col-lg-12">
+                                <article class="box-bordered">
+                                    <h5>Özet Bilgiler</h5>
+                                    <ul>
+                                        <li>a</li>
+                                        <li>b</li>
+                                        <li>c</li>
+                                        <li>d</li>
+                                        <li>e</li>
+                                    </ul>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-xl-8">
+                        <ul class="list-xl">
+                            <li>
+                                <h4>Diş Planı</h4>
+                                <p>Diş planında ödenebilecek komplikasyonlar diş çekimi, cerrahi diş çekimi, kanal tedavisi, implant uygulaması, protez diş uygulaması ve periodontoloji uygulamaları sonrası gelişen giderlerdir. Ortodontik tedaviler teminat dışıdır.</p>
+                                <p>
+                                    Protez diş uygulamasında protezin rengi veya şeklinin beğenilmemesi gibi sorunlar komplikasyon sayılmayacak ve tazminat ödemesi yapılmayacaktır.
+                                    Cerrahi diş çekiminde gecikmiş kanama, diş eti enfeksiyonu, diş parçasının kalmış olması; implant uygulamalarında implantın yerine tam oturmaması, yerinde oynaması, yerinden çıkması, çene kemiğine zarar vermesi gibi komplikasyonlar teminat kapsamındadır.
+                                    <label class="button button-sm button-primary button-shadow button-winona wow clipInLeft" style=" margin-left: 35px; width: 200px; height: 10px;  " data-bs-toggle="modal" data-bs-target="#myModal2" data-wow-delay=".2s">Ödeme Detayı</label>
+                                    <div class="modal fade" id="myModal2">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Diş Komplikasyonu Planı </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body modal-xl">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablePrim2li" style="width:100%;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-bottom border-top border-right pr-2 py-1">
+                                                                    Yatarak Tedavi<br>Teminatı
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="border-bottom border-top pl-3 py-1">
+                                                                    <span style="color:green; font-weight:700;">2.000 EUR</span>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-bottom border-right pr-2 py-1">
+                                                                    Konaklama<br>Teminatı
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="border-bottom pl-3 py-1">
+                                                                    <span style="color:green; font-weight:700;">500 EUR</span>
+                                                                    <div style="position: relative; display: table; height: 1px; width: 100%; padding: 0px; margin: 0px; background-size: cover;"></div>
+                                                                    <small>100 EUR Muafiyetli</small>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-bottom border-right pr-2 py-1">
+                                                                    Ulaşım<br>Teminatı
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="border-bottom pl-3 py-1">
+                                                                    <span style="color:green; font-weight:700;">500 EUR</span>
+                                                                    <div style="position: relative; display: table; height: 1px; width: 100%; padding: 0px; margin: 0px; background-size: cover;"></div>
+                                                                    <small>100 EUR Muafiyetli</small>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 pt-1 pb-0">
+                                                                    Seyahat<br>Teminatı
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 pt-1 pb-0">
+                                                                    <span style="color:green; font-weight:700;">30.000 EUR</span>
+                                                                </td>
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:top; white-space:nowrap; font-weight:700;" valign="top" class="border-bottom border-right pr-2 py-0">
+                                                                    &nbsp;
+
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:top; white-space:nowrap; line-height:1.0;" valign="top" class="border-bottom pl-0 pt-0 pb-0">
+                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablePrim2li my-0" style="width:100%; color:#888; font-size:11px; white-space:nowrap;">
+                                                                        <tbody>
+                                                                            <tr><td class="border-right border-bottom text-left pr-1 pl-2 pt-1"><strong>Hastalık</strong></td><td class="text-right border-bottom pl-1 pt-1">30.000 EUR</td></tr>
+                                                                            <tr><td class="border-right border-bottom text-left pr-1 pl-2"><strong>Kaza</strong></td><td class="text-right border-bottom pl-1">30.000 EUR</td></tr>
+                                                                            <tr><td class="border-right border-bottom text-left pr-1 pl-2"><strong>Cenazenin Yurda<br>Nakli</strong></td><td class="text-right border-bottom pl-1">2.500 EUR</td></tr>
+                                                                            <tr><td class="border-right border-bottom text-left pr-1 pl-2"><strong>Acil Tıbbi Nakil</strong></td><td class="text-right border-bottom pl-1">30.000 EUR</td></tr>
+                                                                            <tr><td class="border-right text-left pr-1 pl-2 pb-1"><strong>Tıbbi Danışmanlık</strong></td><td class="text-right pl-1 pb-1">Limitsiz</td></tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:middle; white-space:nowrap; font-weight:700; line-height:1.1;" valign="middle" class="border-right pr-2 py-1">
+                                                                    Kendi Ülkesinde<br>Müdahale<br>Teminatı
+                                                                </td>
+                                                                <td style="text-align:right; vertical-align:middle; white-space:nowrap; line-height:1.0;" valign="middle" class="pl-3 py-1">
+                                                                    <span style="color:green; font-weight:700;">183 EUR</span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form>
+                                                        <label class="text-center"> <span style="color:black; font-weight:700;">Kendi Ülkesinde Müdahale Dahil Prim :</span> <span style="color:green; font-weight:700;">183 EUR</span></label><br>
+                                                        <label class="text-center"> <span style="color:black; font-weight:700;">Kendi Ülkesinde Müdahale Dahil Değil Prim :</span> <span style="color:green; font-weight:700;">151 EUR</span></label>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </p>
+
+
+                            </li>
+                            <li>
+                                <h4>Göz Planı</h4>
+                                <p>Göz planında, excimer laser, lasik gibi kırılma kusuru cerrahisi, katarakt ameliyatı, ptosis ameliyatı, glokom ameliyatı, retina dekolmanı ameliyatına ilişkin gelişebilecek komplikasyonlar poliçe teminatları içindedir. </p>
+                                <p>Excimer laser ameliyatlarında flep kayması, keratit, flep altına epitel yürümesi, ameliyattan 60 gün sonra yapılan muayenede görmenin 0,75 dereceden fazla bozuk olması; </p>
+                                <p>Katarakta ameliyatında; kanama, gözün delinmesi (perforasyon), lensin kapsulünün yırtılması, kornea tabakasının şeffaflığını yitirmesi, kesi yerinde yanık oluşması, göz içinde katarakta ait parçaların kalması, enfeksiyon, retina ayrılması (dekolman), sarı nokta da ödem, rahatsız ve ağrılı göz, düşük göz kapağı, göz tansiyon hastalığı (glokom) ve /veya çift görme; ameliyattan 60 gün sonra yapılan muayenede görmenin 1 dereceden fazla bozuk olması, arka kapsül opaklaşması; </p>
+                                <p>Ptosis ameliyatında; göz kapağı düşüklüğünün nüks etmesi, </p>
+                                <p>Retina dekolmanı ameliyatında dekolmanın nüks etmesi, göz içine kanama, katarakt ve glokom oluşması; </p>
+                                <p>
+                                    Glokom ameliyatında konjonktival yırtılma, skleral flep hasarı, vitreus kaybı, santral görme alanı kaybı, dekompresyon retinopatisi, enfeksiyon, bleb sızıntısı, suprakoroidal hemoraji, üveit gibi komplikasyonlar teminat altındadır.
+
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Saç Ekimi Planı</h4>
+                                <p>Saç ekimi planında, sigortalı / hastanın işlem yapan hekimin tavsiyelerine uymaması sonucu (erken dönemde saç tarama ve fırçalaması, saç yıkama prosedürüne uyulmaması, saç ekimi sonrası yapılması gereken bakımların yapılmaması gibi) oluşan komplikasyonlar ve saç ekiminin tutmaması teminat dışındadır. </p>
+                                <p>Tüm bu tavsiyelere uyulmasına rağmen ekilen saç köklerinin tutmaması veya saç cildinde enfeksiyon gelişmesine yönelik yapılacak tedaviler ve tekrar saç ekimi teminat kapsamındadır. Tazminat talebinin ödenmesi için saç ekimi sonrası tavsiyelere uyulmuş olduğunun doktor raporu ile tespit edilmesi gerekir. </p>
+                                <p>
+                                    Yapılacak revizyon ekimde, ilk girişimde yapılan ekim adedi üzerinde ekim teminat kapsamı dışındadır.
+
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Ortopedi, Jinekoloji, Genel Cerrahi, Estetik Planı</h4>
+                                <p>Tüm cerrahi işlemlerde ameliyat öncesi hastaya imzalatılmış olan bilgilendirme ve onam formunda yazılı komplikasyonlar teminat altındadır.(Vefat hariç)</p>
+                                <p>Estetik ameliyatlarda; yapılan ameliyatın kişisel beğeniye uymaması nedenli revizyon talepleri karşılanmayacaktır. Ancak, yapılan ameliyatta başarısız olunması (burun estetiğinde burun ucu düşmesi, eğrilik kalması, nasal septum perforasyonu; göğüs estetiğinde asimetri, düşme, implant delinmesi ve kapsüler kontraktür gibi) sonucu gerçekleşecek revizyonlar teminat altındadır. </p>
+                                <p>
+                                    Botox uygulamaları poliçe kapsamında değildir.
+
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Kalp ve Damar Cerrahisi Planı</h4>
+                                <p>Sigortalının Türkiye’de bulunan bir sağlık kurumunda periferik damar cerrahisi, varis ameliyatı, kalp kapak replasmanı, valvüloplasti , koroner arter by pass cerrahisi, koroner stent uygulaması, büyük damar replasmanı gibi bir ameliyat / girişim sonrası gelişen restenoz, stent kayması gibi ilgili ameliyat için tıbbi literatürde belirtilen olası komplikasyonlar teminat altındadır. </p>
+                                <p><strong>COMPLICATION INSURE, sigortalının tazminat taleplerinin değerlendirmesinde gerekirse bağımsız bir uzmandan ikinci görüş alabilir. Demir Sağlık ve Hayat AŞ komplikasyon tazminatlarına ait ödemeler için son karar merciidir.</strong> </p>
+                                <p>
+                                    Tüm bu cerrahi veya tıbbi girişim/uygulama gerektiren durumlarda refakatçi olması ve gerekmesi halinde dahi refakatçiye ait sağlık kurumundaki konaklama ve diğer bedeller ve gerekse ulaşım, otel konaklama giderleri ödenmez (Ek refakatçi planı alınmış olması halinde refakatçiye ait ulaşım (uçak) ve otel konaklama bedelleri teminat limitleri dahilinde ödenir.)
+
+                                </p>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- HTML Text Elements-->
+            <div class="container">
+
+            </div>
+            <!-- Ordered & unOrdered List-->
+            <!-- Blockquote-->
+
+        </section>
+        <!-- Page Footer-->
+  
+</body>
+</html>
+

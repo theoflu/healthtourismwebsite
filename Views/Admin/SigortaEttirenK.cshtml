@@ -1,0 +1,49 @@
+﻿@using website.Models.sınıflar;
+@model List<sigorta_edilen>
+    @{
+        ViewBag.Title = "SigortaEttirenK";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Detay</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Ad-Soyad</th>
+                        <th>Baba Adı</th>
+                        <th>Pasaport No</th>
+                        <th>Doğum Tarihi</th>
+                        <th>Doğum Yeri</th>
+                        <th>Uyruk</th>
+                        <th>Cinsiyet</th>
+                        <th>Telefon</th>
+                        <th>E-posta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model)
+                    {
+                    <tr id="tr">
+                        <td> @x.Ad - @x.Soyad </td>
+                        <td>@x.BabaAdi</td>
+                        <td> @x.PasaportNo</td>
+                        <td>@x.Dtarihi.ToShortDateString()</td>
+                        <td>@x.Dyeri</td>
+                        <td>@x.Uyruk</td>
+                        <td>@x.Cinsiyet</td>
+                        <td>(+@x.Tlfn_kdu) @x.Tlfn</td>
+                        <td> @x.Eposta</td>
+                    </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+

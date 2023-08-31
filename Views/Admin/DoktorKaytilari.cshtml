@@ -1,0 +1,45 @@
+﻿@using website.Models.sınıflar
+@model List<signup>
+@{
+    ViewBag.Title = "DoktorKaytilari";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Doktorlar</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Ad-Soyad</th>
+                    <th>Pasaport No / TC</th>
+                    <th>Telefon</th>
+                    <th>E-posta</th>
+                    <th>Sicil No</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var x in Model)
+                {
+                    <tr id="tr">
+                       
+                        <td> @x.name - @x.sname </td>
+                        <td><a href="/Admin/KestigiPoliceler/@x.psprtno">@x.psprtno</a> </td>
+                        <td> @x.telno</td>
+                        <td> @x.email</td>
+                        <td> @x.sclno</td>
+                       
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+
+

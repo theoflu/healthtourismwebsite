@@ -1,0 +1,279 @@
+﻿﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Complication Insure</title>
+    <link rel="icon" type="image/png" href="~/insre/admn/login/images/icons/favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    <!-- Font Awesome Icons -->
+
+
+
+    <link href="~/insre/admn/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/insre/admn/css/responsive.bootstrap4.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/insre/admn/plugins/fontawesome-free/css/all.min.css">
+
+    <link rel="stylesheet" href="~/insre/admn/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+
+    <link rel="stylesheet" href="~/insre/admn/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/insre/admn/plugins/jqvmap/jqvmap.min.css">
+
+    <link rel="stylesheet" href="~/insre/admn/dist/css/adminlte.min.css">
+
+    <link rel="stylesheet" href="~/insre/admn/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="~/insre/css/bootstrap.css">
+
+
+    <link href="https:/fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    @*<link href="~/Content/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />*@
+
+
+
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+
+            </ul>
+
+            <!-- SEARCH FORM -->
+            <!-- Right navbar links -->
+
+            <ul class="navbar-nav ml-auto">
+                <!-- Messages Dropdown Menu -->
+
+
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="" data-slide="true" href="/Admin/Index" role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+
+            </ul>
+
+            <form class="form-inline ml-3">
+                <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Search" id="searchTags" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="/Anasayfa/Index" class="brand-link">
+                <i class="fas fa-landmark fa-1x"></i>
+
+                <span class="brand-text font-weight-light">   Complication  Insure</span>
+            </a>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+                    <div class="image">
+                        <img src="~/insre/images/logo-default-297x63.jpeg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="/Admin/Index" class="d-block">Admin Paneli</a>
+                    </div>
+                </div>
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+                        <li class="nav-item has-treeview">
+                            <a href="/Admin/Index" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Poliçeler
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="/Admin/DoktorKaytilari" class="nav-link">
+                                <i class="nav-icon fas fa-hospital "></i>
+                                <p>
+                                    Doktorlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Admin/Mail" class="nav-link">
+                                <i class="nav-icon fas fa-mail-bulk"></i>
+                                <p>
+                                   Mailler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/RoleAdmin/Index" class="nav-link">
+                                <i class="nav-icon fas fa-pen"></i>
+                                <p>
+                                    Rol Yönetimi
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Admin/ChangePassword" class="nav-link">
+                                <i class="nav-icon fas  fa-cog  "></i>
+                                <p>
+                                    Şifre Yenile
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Anasayfa/Index" class="nav-link">
+                                <i class="nav-icon fas  fa-angle-right"></i>
+                                <p>
+                                    Siteye Git
+                                </p>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="/Admin/Logout" class="nav-link">
+                                <i class="nav-icon fas fa-user-times"></i>
+                                <p>
+                                    Çıkış yap
+                                </p>
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <div class="content">
+                @RenderBody()
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+
+
+    <script src="~/insre/admn/jquery/jquery.min.js"></script>
+    <script src="~/insre/admn/js/jquery.dataTables.min.js"></script>
+    <script src="~/insre/admn/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/insre/admn/js/dataTables.responsive.min.js"></script>
+    <script src="~/insre/admn/js/responsive.bootstrap4.min.js"></script>
+    <script>
+        $(function () {
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": false,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+
+    <script src="~/insre/admn/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+
+    <script src="~/insre/admn/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/insre/admn/plugins/chart.js/Chart.min.js"></script>
+
+    <script src="~/insre/admn/plugins/sparklines/sparkline.js"></script>
+
+
+
+    <script src="~/insre/admn/plugins/jquery-knob/jquery.knob.min.js"></script>
+
+    <script src="~/insre/admn/plugins/moment/moment.min.js"></script>
+    <script src="~/insre/admn/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <script src="~/insre/admn/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <script src="~/insre/admn/plugins/summernote/summernote-bs4.min.js"></script>
+
+    <script src="~/insre/admn/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+
+    <script src="~/insre/admn/dist/js/adminlte.js"></script>
+
+    <script src="~/insre/admn/dist/js/pages/dashboard.js"></script>
+
+    <script src="~/insre/admn/dist/js/demo.js"></script>
+
+
+    <script>
+        jQuery.expr[':'].contains = function (a, i, m) {
+            return jQuery(a).text().toUpperCase()
+                .indexOf(m[3].toUpperCase()) >= 0;
+        };
+
+        $(document).ready(function () {
+
+            // keyup ile inputa herhangi bir değer girilince fonksiyonu tetikliyoruz
+            $("#searchTags").keyup(function () {
+
+                // inputa yazılan değeri alıyoruz
+                var value = $("#searchTags").val();
+
+                // eğer input içinde değer yoksa yani boşsa tüm menüyü çıkartıyoruz
+                if (value.length == 0) {
+
+                    $("#example2 #tr").show();
+
+                    // arama yapılmışsa ilk olarak tüm menüyü gizliyoruz ve girilen değer ile eşleşen kısmı çıkarıyoruz
+                } else {
+
+                    $("#example2 #tr").hide();
+                    $("#example2 #tr:contains(" + value + ")").show();
+
+                }
+
+            });
+
+        });</script>
+</body>
+</html>

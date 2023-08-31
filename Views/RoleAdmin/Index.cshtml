@@ -1,0 +1,63 @@
+﻿@model  IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Roller</h3>
+        </div>
+        </div>
+
+        <div class="card-body">
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Rol Adı</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Count() == 0)
+                    {
+                        <tr>
+                            <td class="text-center" colspan="3">Belirlenmiş bir rol yok</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var i in Model)
+                        {
+                            <tr>
+                                <td>@i.Id</td>
+                                <td>@i.Name</td>
+                                <td>
+                                    @using (Html.BeginForm("Delete", "RoleAdmin", new { id = i.Id }))
+                                    {
+                                        @Html.ActionLink("Güncelle", "Edit", new { id = i.Id }, new { @class = "btn btn-primary btn-sm" })
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete  </button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+
+                    }
+                </tbody>
+
+            </table>
+        </div>
+</body>
+</html>
+
